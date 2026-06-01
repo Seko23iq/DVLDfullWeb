@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVLD – Login</title>
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/login.js" defer></script>
+</head>
+<body>
+    <div class="login-container">
+
+        <!-- Login Panel -->
+    <div class="login-panel">
+            <div class="toast" id="toast"></div>
+        <div class="login-logo">
+            <div class="login-logo-icon">🪪</div>
+            <span class="login-logo-name">DV<span>LD</span></span>
+        </div>
+        <h2 class="login-heading">Welcome back</h2>
+        <p class="login-sub">Sign in to your DVLD account to continue</p>
+
+        <div class="field">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+        </div>
+
+        <div class="field">
+            <div class="field-row">
+                <label for="password">Password</label>
+            </div>
+            <input type="password" id="password" name="password" placeholder="••••••••">
+        </div>
+
+        <div class="field rememberme">
+            <input type="checkbox" name="rememberme" id="rememberme" checked>
+            <div class="field-row">
+                <label for="rememberme">Remember Me</label>
+            </div>
+        </div>
+
+        <button class="btn-primary" id="signIn" type="submit">Sign In</button>
+    </div>
+
+    <!-- Hero Panel -->
+    <div class="hero-panel">
+        <div class="hero-badge">
+            <div class="hero-badge-icon">🪪</div>
+            <span class="hero-badge-text">DVLD System</span>
+        </div>
+        <div class="hero-card c1">
+            <div class="hero-card-inner">
+            <div class="hc-line short"></div>
+            <div class="hc-line xshort"></div>
+            <div class="hc-avatar"></div>
+            <div class="hc-line" style="width:70%"></div>
+            <div class="hc-line xshort"></div>
+            </div>
+        </div>
+        <div class="hero-card c2">
+            <div class="hero-card-inner">
+            <div class="hc-line short"></div>
+            <div class="hc-line xshort"></div>
+            <div class="hc-line" style="width:65%"></div>
+            </div>
+        </div>
+        <div class="hero-text">
+            <h1>Driver & Vehicle<br>Licensing System</h1>
+            <p>Manage licenses, applications, and vehicle registrations through a unified, secure platform.</p>
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="/css/mainUser.css">
+    <link rel="stylesheet" href="/css/ManageTestTypes.css">
+
+    <script src="/js/ManageTestTypes.js" type="module"></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/layout.js" defer></script>
+
+    <title>Manage Test Types</title>
+</head>
+<body>
+<div class="page">
+
+    <div id="sidebar"></div>
+
+
+    <main>
+        <div class="title-bar">
+            <h1>Manage Test Types</h1>
+        </div>
+
+        <div class="table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Fees</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody id="ManageApplicationTypeTableBody">
+                    <!-- Rows injected by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ── Pagination ── -->
+        <div class="pagination-bar">
+            <span class="page-info" id="pageInfo">Page 1 of 1</span>
+            <div class="pagination-btns">
+                <button class="pg-btn" id="btnFirst"   onclick="goToPage(1)"              title="First">«</button>
+                <button class="pg-btn" id="btnPrev"    onclick="goToPage(currentPage - 1)" title="Previous">‹</button>
+                <div class="pg-numbers" id="pgNumbers"></div>
+                <button class="pg-btn" id="btnNext"    onclick="goToPage(currentPage + 1)" title="Next">›</button>
+                <button class="pg-btn" id="btnLast"    onclick="goToPage(totalPages)"      title="Last">»</button>
+            </div>
+            <span class="page-total" id="totalCount"></span>
+        </div>
+    </main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+</body>
+</html>

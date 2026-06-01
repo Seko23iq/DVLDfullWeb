@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="/css/mainUser.css">
+    <link rel="stylesheet" href="/css/updateManageApplicationType.css">
+
+    <script src="/js/updateManageApplicationType.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/layout.js" defer></script>
+
+    <title>Edit Application Type</title>
+</head>
+<body>
+<div class="page">
+
+
+    <div id="sidebar"></div>
+
+
+    <main>
+        <div class="title-bar">
+            <a href="/Sections/Applications/ManageApplicationTypes/ManageApplicationType.html" class="back-link">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 5l-6 5 6 5"/>
+                </svg>
+                Back to Application Types
+            </a>
+            <h1>Edit Application Type</h1>
+        </div>
+
+        <!-- Loading state -->
+        <div id="loadingState" class="state-box">
+            <div class="spinner"></div>
+            <p>Loading data…</p>
+        </div>
+
+        <!-- Error state -->
+        <div id="errorState" class="state-box hidden">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="40" height="40">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <circle cx="12" cy="16" r="0.5" fill="currentColor"/>
+            </svg>
+            <p id="errorMsg">Failed to load data.</p>
+        </div>
+
+        <!-- Edit Form -->
+        <div id="formCard" class="form-card hidden">
+
+            <div class="form-section-label">Application Type Info</div>
+
+            <!-- ID — read only -->
+            <div class="field-group">
+                <label class="field-label" for="fieldID">
+                    ID
+                    <span class="readonly-badge">Read-only</span>
+                </label>
+                <div class="input-wrap readonly-wrap">
+                    <svg class="input-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <rect x="3" y="8" width="14" height="9" rx="1.5"/>
+                        <path d="M7 8V6.5a3 3 0 0 1 6 0V8"/>
+                        <circle cx="10" cy="13" r="1.2" fill="currentColor" stroke="none"/>
+                    </svg>
+                    <input type="text" id="fieldID" class="field-input" readonly tabindex="-1" />
+                </div>
+            </div>
+
+            <!-- Title -->
+            <div class="field-group">
+                <label class="field-label" for="fieldTitle">
+                    Title
+                    <span class="required-star">*</span>
+                </label>
+                <div class="input-wrap">
+                    <svg class="input-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="M4 6h12M4 10h8M4 14h10"/>
+                    </svg>
+                    <input
+                        type="text"
+                        id="fieldTitle"
+                        class="field-input"
+                        placeholder="e.g. New Driver License"
+                        maxlength="120"
+                    />
+                </div>
+                <span class="field-error hidden" id="titleError">Title is required.</span>
+            </div>
+
+            <!-- Fees -->
+            <div class="field-group">
+                <label class="field-label" for="fieldFees">
+                    Fees
+                    <span class="required-star">*</span>
+                </label>
+                <div class="input-wrap">
+                    <svg class="input-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <circle cx="10" cy="10" r="7.5"/>
+                        <path d="M10 6v8M7.5 8.5c0-1.1.9-2 2.5-2s2.5.9 2.5 2-1 1.6-2.5 2-2.5.9-2.5 2 .9 2 2.5 2 2.5-.9 2.5-2"/>
+                    </svg>
+                    <input
+                        type="number"
+                        id="fieldFees"
+                        class="field-input"
+                        placeholder="0.00"
+                        min="0"
+                        step="0.01"
+                    />
+                </div>
+                <span class="field-error hidden" id="feesError">Fees must be 0 or greater.</span>
+            </div>
+
+            <!-- Actions -->
+            <div class="form-actions">
+                <a href="/Sections/Applications/ManageApplicationTypes/ManageApplicationType.html" class="btn-cancel">
+                    Cancel
+                </a>
+                <button class="btn-save" id="btnSave">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M13 2H5L2 5v9h12V2zM10 2v4H5V2M8 9a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                    </svg>
+                    Save Changes
+                </button>
+            </div>
+
+            <!-- Success / error toast -->
+            <div id="toast" class="toast hidden"></div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

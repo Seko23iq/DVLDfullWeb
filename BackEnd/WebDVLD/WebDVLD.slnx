@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Project Path="../BussinesLayer/BussinesLayer.csproj" Id="7548f5be-c78a-4ffe-b07a-12135d82ad45" />
+  <Project Path="../DataLayer/DataLayer.csproj" />
+  <Project Path="../DtoLayer/DtoLayer.csproj" Id="1553fa40-a562-45bb-b476-e0b35bedc066" />
+  <Project Path="WebDVLD.csproj" />
+</Solution>

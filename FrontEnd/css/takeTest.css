@@ -1,0 +1,348 @@
+/* ===================================================================
+   takeTest.css  —  Page-specific styles for Take Test
+   Relies on mainStyle.css for tokens, reset, sidebar, and page shell.
+=================================================================== */
+
+/* ── Content Area ───────────────────────────────────────────────── */
+.content {
+  padding: var(--sp-6) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  max-width: 860px;
+  margin: 10px 10%;
+}
+
+/* ── Page Header ────────────────────────────────────────────────── */
+.content-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.header-title svg {
+  width: 26px;
+  height: 26px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.header-title h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+}
+
+.header-sub {
+  font-size: 14px;
+  color: var(--muted);
+  padding-left: 38px; /* align with title text after icon */
+}
+
+/* ── Info Grid ──────────────────────────────────────────────────── */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+}
+
+/* last card spans full row */
+.info-card--full {
+  grid-column: 1 / -1;
+}
+
+.info-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s;
+}
+
+.info-card:hover {
+  border-color: var(--accent);
+}
+
+.info-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--muted);
+}
+
+.info-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.info-value--mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+}
+
+/* ── Take Test Container ────────────────────────────────────────── */
+.take-test-container {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.take-test-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.take-test-header svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.take-test-body {
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+/* ── Field Group ────────────────────────────────────────────────── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  border: none;
+  padding: 0;
+  min-width: 0;
+}
+
+.field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.2px;
+}
+
+/* ── Radio Group ────────────────────────────────────────────────── */
+.radio-group {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--line);
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--bg);
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  user-select: none;
+}
+
+.radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio-option svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+
+/* Pass option */
+.radio-option--pass:has(input:checked) {
+  border-color: #22c55e;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.radio-option--pass:has(input:checked) svg {
+  opacity: 1;
+  color: #22c55e;
+}
+
+.radio-option--pass:hover {
+  border-color: #86efac;
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+/* Fail option */
+.radio-option--fail:has(input:checked) {
+  border-color: #ef4444;
+  background: #fff1f2;
+  color: #b91c1c;
+}
+
+.radio-option--fail:has(input:checked) svg {
+  opacity: 1;
+  color: #ef4444;
+}
+
+.radio-option--fail:hover {
+  border-color: #fca5a5;
+  color: #b91c1c;
+  background: #fff1f2;
+}
+
+/* ── Textarea ───────────────────────────────────────────────────── */
+.field-textarea {
+  width: 100%;
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  font: 14px/1.6 var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.field-textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.75;
+}
+
+.field-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(120, 32, 167, 0.12);
+}
+
+/* ── Action Buttons ─────────────────────────────────────────────── */
+.take-test-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  font: 600 14px/1 var(--font-body);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  text-decoration: none;
+}
+
+.btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn--cancel {
+  background: transparent;
+  border: 1.5px solid var(--line);
+  color: var(--muted);
+}
+
+.btn--cancel:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.btn--save {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn--save:hover {
+  background: var(--accent-hover);
+}
+
+/* ── Dark mode adjustments ──────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .info-card:hover   { border-color: var(--accent); }
+  .field-textarea    { background: var(--card); }
+  .radio-option      { background: var(--card); }
+
+  .radio-option--pass:has(input:checked) {
+    background: rgba(34, 197, 94, 0.1);
+  }
+  .radio-option--fail:has(input:checked) {
+    background: rgba(239, 68, 68, 0.1);
+  }
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .content        { padding: var(--sp-4); }
+  .info-grid      { grid-template-columns: 1fr 1fr; }
+  .take-test-body { padding: var(--sp-4); }
+  .take-test-actions { padding: var(--sp-3) var(--sp-4); }
+  .header-sub     { padding-left: 0; }
+}
+
+@media (max-width: 480px) {
+  .info-grid      { grid-template-columns: 1fr; }
+  .info-card--full { grid-column: 1; }
+  .radio-group    { flex-direction: column; }
+}
+
+/* ── Toast ───────────────────────────────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #1a7f4b;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+.toast.success { background: #1a7f4b; }
+.toast.error   { background: #c53030; }
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast svg  { width: 18px; height: 18px; }

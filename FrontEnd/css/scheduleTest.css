@@ -1,0 +1,202 @@
+/* ── Main Content ── */
+.main-content {
+    padding: var(--sp-6) var(--sp-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-5);
+}
+.page-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-1);
+}
+.page-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+}
+.page-header p {
+    font-size: 14px;
+    color: var(--muted);
+}
+/* ── Card ── */
+.card {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    padding: var(--sp-5) var(--sp-6);
+}
+.card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: var(--sp-5);
+    padding-bottom: var(--sp-3);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+}
+.card-title svg {
+    width: 17px;
+    height: 17px;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+/* ── Form Fields Grid ── */
+.fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4) var(--sp-6);
+    margin-bottom: var(--sp-4);
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.field label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.field-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 9px var(--sp-3);
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+.field-value.empty {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 13px;
+}
+/* ── Date Input ── */
+.field input[type="date"] {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 9px var(--sp-3);
+    min-height: 40px;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    width: 100%;
+    cursor: pointer;
+}
+.field input[type="date"]:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(120,32,167,.12);
+}
+/* ── Retake Test Info Section ── */
+.retake-card {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    padding: var(--sp-5) var(--sp-6);
+    opacity: 0.55;
+    pointer-events: none;
+    position: relative;
+}
+.retake-card::after {
+    content: "Disabled";
+    position: absolute;
+    top: var(--sp-4);
+    right: var(--sp-5);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    background: var(--line);
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+.retake-card .card-title {
+    color: var(--muted);
+}
+.retake-card .field-value {
+    background: var(--line);
+    color: var(--muted);
+}
+/* Total Fees highlight */
+.field-value.highlight {
+    font-weight: 700;
+    color: var(--accent);
+    border-color: rgba(120,32,167,.25);
+    background: rgba(120,32,167,.05);
+}
+/* ── Action Buttons ── */
+.actions {
+    display: flex;
+    gap: var(--sp-3);
+    justify-content: flex-end;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    padding: 10px var(--sp-5);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    border: none;
+    transition: background 0.15s, transform 0.1s;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--line);
+}
+.btn-ghost:hover { background: var(--bg); color: var(--ink); }
+.btn svg { width: 15px; height: 15px; }
+@media (max-width: 768px) {
+    .main-content { padding: var(--sp-4); }
+    .fields-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Toast ───────────────────────────────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #1a7f4b;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+.toast.success { background: #1a7f4b; }
+.toast.error   { background: #c53030; }
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast svg  { width: 18px; height: 18px; }

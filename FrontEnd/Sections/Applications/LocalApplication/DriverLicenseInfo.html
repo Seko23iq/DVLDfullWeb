@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/mainStyle.css" />
+  <link rel="stylesheet" href="/css/peopleStyle.css" />
+  <link rel="stylesheet" href="/css/driverLicenseInfo.css">
+
+  <script src="/js/DriverLicenseInfo.js" defer></script>
+  <script src="/js/main.js" defer></script>
+    <script src="/js/layout.js" defer></script>
+
+  <title>Driver License Info</title>
+</head>
+<body>
+
+<div class="page">
+ <!-- class="active" -->
+  <!-- ══════════════════════════════════════
+        SIDEBAR
+  ══════════════════════════════════════ -->
+    <div id="sidebar"></div>
+
+
+  <!-- ══════════════════════════════════════
+        MAIN CONTENT
+  ══════════════════════════════════════ -->
+  <main>
+
+    <!-- Title -->
+    <div class="title-bar">
+        <h1>Driver License Details</h1>
+    </div>
+
+    <!-- Class Banner -->
+    <div class="licenseClass">
+        <span>License Class</span>
+        <span class="Class">3rd Class</span>
+    </div>
+
+    <!-- Info Grid -->
+    <div class="licenseInfo">
+
+        <!-- Name — full width -->
+        <div class="licenseName">
+            <span>Name</span>
+            <span class="Name">Ali Ahmed Omar</span>
+        </div>
+
+        <!-- Row: License ID | isActive? -->
+        <div class="licenseID">
+            <span>License ID</span>
+            <span class="LicenseID">LIC-20480</span>
+        </div>
+        <div class="licenseIsActive">
+            <span>Is Active?</span>
+            <span class="IsActive">
+                <span class="status-badge status-active">Active</span>
+            </span>
+        </div>
+
+        <!-- Row: National No | Date Of Birth -->
+        <div class="licenseNationalNo">
+            <span>National No</span>
+            <span class="NationalNo">N1080</span>
+        </div>
+        <div class="licenseDateOfBirth">
+            <span>Date Of Birth</span>
+            <span class="DateOfBirth">11/12/1995</span>
+        </div>
+
+        <!-- Row: Gender | Driver ID -->
+        <div class="licenseGendor">
+            <span>Gender</span>
+            <span class="Gendor">Male</span>
+        </div>
+        <div class="licenseDriverID">
+            <span>Driver ID</span>
+            <span class="DriverID">DRV-00541</span>
+        </div>
+
+        <!-- Row: Issue Date | Expiration Date -->
+        <div class="licenseIssueDate">
+            <span>Issue Date</span>
+            <span class="IssueDate">03/15/2022</span>
+        </div>
+        <div class="licenseExpirationDate">
+            <span>Expiration Date</span>
+            <span class="ExpirationDate">03/15/2027</span>
+        </div>
+
+        <!-- Row: Issue Reason | Is Detained? -->
+        <div class="licenseIssueReason">
+            <span>Issue Reason</span>
+            <span class="IssueReason">New License</span>
+        </div>
+        <div class="licenseIsDetained">
+            <span>Is Detained?</span>
+            <span class="IsDetained">
+                <span class="status-badge status-free">Not Detained</span>
+            </span>
+        </div>
+
+        <!-- Notes — full width -->
+        <div class="licenseNotes">
+            <span>Notes</span>
+            <span class="Notes">No additional notes for this license.</span>
+        </div>
+
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

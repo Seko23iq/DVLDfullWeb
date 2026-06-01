@@ -1,0 +1,32 @@
+:root {
+  --table-head-bg:    #f8f8fc;
+  --badge-active-bg:  #e6f7ee;
+  --badge-active-fg:  #1a7a3f;
+  --badge-inactive-bg:#fbeaea;
+  --badge-inactive-fg:#a32d2d;
+}
+/* ── IsActive badge ──────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.badge-active   { background: var(--badge-active-bg);   color: var(--badge-active-fg);   }
+.badge-inactive { background: var(--badge-inactive-bg); color: var(--badge-inactive-fg); }
+
+/* dot indicator inside badge */
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.badge-active   .badge-dot { background: var(--badge-active-fg);   }
+.badge-inactive .badge-dot { background: var(--badge-inactive-fg); }
+

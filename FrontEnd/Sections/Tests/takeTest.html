@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="/css/takeTest.css">
+    <script type="module" src="/js/takeTest.js" ></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/layout.js" defer></script>
+
+    <title>Take Test</title>
+</head>
+<body>
+<div class="page">
+
+    <!-- ── Sidebar (reused from main) ── -->
+    <div id="sidebar"></div>
+
+
+    <!-- ── Main Content ── -->
+    <main class="content" aria-label="Take Test">
+
+        <header class="content-header">
+            <div class="header-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                    <rect x="9" y="3" width="6" height="4" rx="1.5"/>
+                    <path d="M9 12h6M9 16h4"/>
+                </svg>
+                <h1>Take Test</h1>
+            </div>
+            <p class="header-sub">Review applicant details and record the test result below.</p>
+        </header>
+
+        <!-- ── Info Cards ── -->
+        <section class="info-grid" aria-label="Applicant information">
+
+            <div class="info-card">
+                <span class="info-label">D.L. App. ID</span>
+                <span class="info-value" id="dlAppId">—</span>
+            </div>
+
+            <div class="info-card">
+                <span class="info-label">D. Class</span>
+                <span class="info-value" id="dClass">—</span>
+            </div>
+
+            <div class="info-card">
+                <span class="info-label">Name</span>
+                <span class="info-value" id="applicantName">—</span>
+            </div>
+
+            <div class="info-card">
+                <span class="info-label">Trial</span>
+                <span class="info-value" id="trial">—</span>
+            </div>
+
+            <div class="info-card">
+                <span class="info-label">Date</span>
+                <span class="info-value" id="testDate">—</span>
+            </div>
+
+            <div class="info-card">
+                <span class="info-label">Fees</span>
+                <span class="info-value" id="fees">—</span>
+            </div>
+
+            <div class="info-card info-card--full">
+                <span class="info-label">Test ID</span>
+                <span class="info-value info-value--mono" id="testId">Not Taken Yet</span>
+            </div>
+
+        </section>
+
+        <!-- ── Take Test Container ── -->
+        <section class="take-test-container" aria-label="Test result form">
+            <div class="take-test-header">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="10" cy="10" r="7.5"/>
+                    <path d="M7 10l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Take Test
+            </div>
+
+            <div class="take-test-body">
+
+                <!-- Result -->
+                <fieldset class="field-group" aria-label="Test result">
+                    <legend class="field-label">Result</legend>
+                    <div class="radio-group">
+                        <label class="radio-option radio-option--pass">
+                            <input type="radio" name="result" value="pass" />
+                            <span class="radio-custom"></span>
+                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 10l4.5 4.5L16 6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Pass
+                        </label>
+                        <label class="radio-option radio-option--fail">
+                            <input type="radio" name="result" value="fail" />
+                            <span class="radio-custom"></span>
+                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 6l8 8M14 6l-8 8" stroke-linecap="round"/>
+                            </svg>
+                            Fail
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- Notes -->
+                <div class="field-group">
+                    <label class="field-label" for="notes">Notes</label>
+                    <textarea
+                        id="notes"
+                        class="field-textarea"
+                        rows="4"
+                        placeholder="Enter any remarks or observations about the test…"
+                    ></textarea>
+                </div>
+
+            </div>
+
+            <!-- Actions -->
+            <div class="take-test-actions">
+                <button type="button" class="btn btn--cancel" id="btnCancel">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M6 6l8 8M14 6l-8 8" stroke-linecap="round"/>
+                    </svg>
+                    Cancel
+                </button>
+                <button type="button" class="btn btn--save" id="btnSave">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M4 10l4.5 4.5L16 6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Save
+                </button>
+            </div>
+        </section>
+
+    </main>
+</div>
+<div class="toast" id="toast">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+        <polyline points="3 10 8 15 17 5"/>
+    </svg>
+    <!-- User created successfully! -->
+</div>
+</body>
+</html>

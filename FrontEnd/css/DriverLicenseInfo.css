@@ -1,0 +1,192 @@
+/* ===================================================================
+   driverLicenseInfo.css  —  Driver License Details Page
+   Depends on mainStyle.css and peopleStyle.css
+=================================================================== */
+
+main {
+    padding: var(--sp-4) var(--sp-7) var(--sp-3);
+}
+
+.title-bar {
+    margin-bottom: var(--sp-4);
+}
+
+/* ── License Class Badge (top banner) ────────────────────────── */
+.licenseClass {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    background: linear-gradient(135deg, var(--accent) 0%, #5e178a 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-4) var(--sp-6);
+    max-width: 860px;
+    margin: 0 auto var(--sp-4);
+    box-shadow: 0 4px 18px rgba(120, 32, 167, 0.22);
+}
+
+.licenseClass span:first-child {
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 7px 0px 0px 0px;
+}
+
+.licenseClass span:last-child {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* ── License Info Card ─────────────────────────────────────────── */
+.licenseInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-3) var(--sp-5);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: var(--sp-6);
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* ── Full-width fields (Name, Notes) ──────────────────────────── */
+.licenseName,
+.licenseNotes {
+    grid-column: 1 / -1;
+}
+
+/* ── Info fields ──────────────────────────────────────────────── */
+.licenseName,
+.licenseID,
+.licenseIsActive,
+.licenseNationalNo,
+.licenseDateOfBirth,
+.licenseGendor,
+.licenseDriverID,
+.licenseIssueDate,
+.licenseExpirationDate,
+.licenseIssueReason,
+.licenseIsDetained,
+.licenseNotes {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--sp-3) var(--sp-4);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.licenseName:hover,
+.licenseID:hover,
+.licenseIsActive:hover,
+.licenseNationalNo:hover,
+.licenseDateOfBirth:hover,
+.licenseGendor:hover,
+.licenseDriverID:hover,
+.licenseIssueDate:hover,
+.licenseExpirationDate:hover,
+.licenseIssueReason:hover,
+.licenseIsDetained:hover,
+.licenseNotes:hover {
+    border-color: rgba(120, 32, 167, 0.35);
+    box-shadow: 0 0 0 3px rgba(120, 32, 167, 0.06);
+}
+
+/* Label */
+.licenseInfo div span:first-child {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+}
+
+/* Value */
+.licenseInfo div span:last-child {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--ink);
+}
+
+/* License ID — monospaced + accent */
+.licenseID .LicenseID {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: var(--accent);
+}
+
+/* Driver ID — monospaced */
+.licenseDriverID .DriverID {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: var(--muted);
+}
+
+/* Notes — slightly muted, italic */
+.licenseNotes .Notes {
+    font-size: 13.5px;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* ── Status Badges ────────────────────────────────────────────── */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.status-badge::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+.status-active {
+    background: #a7f3dc;
+    color: #0d4a27 !important;
+}
+.status-inactive {
+    background: #fca5a5;
+    color: #6b0f0f !important;
+}
+.status-detained {
+    background: #fcd34d;
+    color: #5c3a00 !important;
+}
+.status-free {
+    background: #6ee7b7;
+    color: #064e32 !important;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .licenseInfo {
+        grid-template-columns: 1fr;
+        padding: var(--sp-4);
+    }
+
+    .licenseName,
+    .licenseNotes {
+        grid-column: 1;
+    }
+
+    .licenseClass {
+        padding: var(--sp-3) var(--sp-4);
+    }
+}

@@ -1,0 +1,272 @@
+/* ===================================================================
+   addPerson.css  —  Add Person Page
+   Depends on mainStyle.css and peopleStyle.css
+=================================================================== */
+
+/* ── Override main padding ───────────────────────────────────────── */
+main {
+    padding: var(--sp-4) var(--sp-7) var(--sp-6);
+}
+
+.title-bar {
+    margin-bottom: var(--sp-4);
+}
+
+/* ── Form Card ───────────────────────────────────────────────────── */
+.addForm {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: var(--sp-6);
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-6);
+}
+
+/* ── Image Upload ────────────────────────────────────────────────── */
+.imageUpload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-3);
+}
+
+.imagePreviewWrap {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--line);
+    box-shadow: 0 4px 16px rgba(120, 32, 167, 0.15);
+    transition: box-shadow 0.2s;
+}
+
+.imagePreviewWrap:hover {
+    box-shadow: 0 6px 24px rgba(120, 32, 167, 0.28);
+}
+
+#imagePreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.imageLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    height: 36px;
+    padding: 0 18px;
+    border-radius: var(--radius-md);
+    background: var(--bg);
+    border: 1.5px solid var(--line);
+    color: var(--ink);
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.imageLabel svg {
+    width: 15px;
+    height: 15px;
+    color: var(--accent);
+}
+
+.imageLabel:hover {
+    border-color: var(--accent);
+    background: rgba(120, 32, 167, 0.05);
+}
+
+.imageHint {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ── Fields Grid ─────────────────────────────────────────────────── */
+.fieldsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4) var(--sp-6);
+}
+
+/* ── Single Field ────────────────────────────────────────────────── */
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field-group label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+}
+
+.req {
+    color: #a32d2d;
+    margin-left: 2px;
+}
+
+.field-group input,
+.field-group select {
+    height: 40px;
+    padding: 0 14px;
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--line);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    appearance: auto;
+}
+
+.field-group input::placeholder {
+    color: var(--muted);
+    opacity: 0.7;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(120, 32, 167, 0.10);
+}
+
+/* Invalid state */
+.field-group input.invalid,
+.field-group select.invalid {
+    border-color: #d9534f;
+    box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.10);
+}
+
+/* Valid state */
+.field-group input.valid,
+.field-group select.valid {
+    border-color: #4caf50;
+}
+
+/* Error message */
+.field-error {
+    font-size: 11.5px;
+    color: #a32d2d;
+    min-height: 16px;
+    display: block;
+}
+
+/* ── Form Actions ────────────────────────────────────────────────── */
+.formActions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--sp-3);
+    padding-top: var(--sp-3);
+    border-top: 1px solid var(--line);
+}
+
+.btn-cancel {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    height: 40px;
+    padding: 0 20px;
+    border-radius: var(--radius-md);
+    background: var(--bg);
+    border: 1.5px solid var(--line);
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-cancel svg { width: 14px; height: 14px; }
+
+.btn-cancel:hover {
+    border-color: #d9534f;
+    color: #a32d2d;
+}
+
+.btn-save {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    height: 40px;
+    padding: 0 24px;
+    border-radius: var(--radius-md);
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s, opacity 0.15s;
+}
+
+.btn-save svg { width: 15px; height: 15px; }
+
+.btn-save:hover   { background: var(--accent-hover); }
+.btn-save:active  { transform: scale(0.98); }
+.btn-save:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ── Toast ───────────────────────────────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    min-width: 240px;
+    padding: 14px 20px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.toast.success { background: #2e7d32; }
+.toast.error   { background: #a32d2d; }
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+    main { padding: var(--sp-4); }
+
+    .addForm { padding: var(--sp-4); }
+
+    .fieldsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .formActions {
+        flex-direction: column;
+    }
+
+    .btn-cancel,
+    .btn-save {
+        width: 100%;
+        justify-content: center;
+    }
+}

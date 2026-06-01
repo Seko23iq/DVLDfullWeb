@@ -1,0 +1,369 @@
+
+/* ── Main layout ────────────────────────────────────────────── */
+main {
+  padding: var(--sp-4) var(--sp-7) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+.title-bar { margin-bottom: 0; }
+/* ── Shared Card Shell ──────────────────────────────────────── */
+.section-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.section-title svg { color: var(--accent); }
+/* ── Filter Card ────────────────────────────────────────────── */
+.filter-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+.filter-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.filter-card-header svg { color: var(--accent); }
+.filter-card-body { padding: var(--sp-4) var(--sp-5); }
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+.field-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  min-width: 80px;
+}
+.filter-input-group {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex: 1;
+  flex-wrap: wrap;
+}
+.filter-input {
+  flex: 1;
+  min-width: 180px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.filter-input::placeholder { color: var(--muted); opacity: 0.7; }
+.filter-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(120, 32, 167, 0.12);
+}
+.filter-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #999;
+}
+.btn-search {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  height: 40px;
+  padding: 0 20px;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+.btn-search:hover  { background: var(--accent-hover); }
+.btn-search:active { transform: scale(0.98); }
+.btn-search:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #999;
+}
+/* ── Driver License Info (reuse driverLicenseInfo.css) ──────── */
+#driverLicenseSection .licenseClass,
+#driverLicenseSection .licenseInfo {
+  max-width: 100%;
+  margin: var(--sp-4) var(--sp-5);
+}
+#driverLicenseSection .licenseClass { margin-top: var(--sp-5); }
+#driverLicenseSection .licenseInfo  { margin-bottom: var(--sp-5); }
+/* ── Detain Info Grid ───────────────────────────────────────── */
+.detainInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3) var(--sp-5);
+  padding: var(--sp-5);
+}
+.detainField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.detainField:hover {
+  border-color: rgba(217, 119, 6, 0.35);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.06);
+}
+/* Label */
+.detainField > span:first-child,
+.detainField > label {
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+}
+/* Value */
+.detainFieldValue {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.detainFieldValue.mono {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--accent);
+}
+/* Fine Fees input — spans full width */
+.detainField.full-width {
+  grid-column: 1 / -1;
+}
+/* Fine Fees input styling */
+.fine-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.fine-input-wrapper .currency-symbol {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0d7a3a;
+  flex-shrink: 0;
+}
+.fine-fees-input {
+  flex: 1;
+  max-width: 220px;
+  height: 38px;
+  padding: 0 12px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  color: #0d7a3a;
+  font-size: 14.5px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.fine-fees-input::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+  font-weight: 400;
+}
+.fine-fees-input:focus {
+  border-color: #0d7a3a;
+  box-shadow: 0 0 0 3px rgba(13, 122, 58, 0.12);
+}
+/* ── Detain section header accent — amber/warning tone ──────── */
+#detainInfoSection .section-title svg { color: #d97706; }
+/* ── Action Bar ─────────────────────────────────────────────── */
+.app-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+.app-action-links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+.btn-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--accent-2);
+  border: 1.5px solid #bfdbfe;
+  background: #eff6ff;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.btn-action-link:hover {
+  background: #dbeafe;
+  border-color: var(--accent-2);
+  color: #1d4ed8;
+  text-decoration: none;
+}
+.btn-action-link.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.app-action-btns {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.btn-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 18px;
+  border-radius: var(--radius-md);
+  background: #f9fafb;
+  color: #374151;
+  border: 1.5px solid var(--line);
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.btn-close:hover { background: #f3f4f6; border-color: #9ca3af; }
+/* Detain button — amber/warning color */
+.btn-detain {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 22px;
+  border-radius: var(--radius-md);
+  background: #d97706;
+  color: #fff;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+.btn-detain:hover  { background: #b45309; }
+.btn-detain:active { transform: scale(0.98); }
+.btn-detain:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #999;
+}
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  main { padding: var(--sp-4) var(--sp-4) var(--sp-6); gap: var(--sp-4); }
+  .detainInfo { grid-template-columns: 1fr; padding: var(--sp-4); }
+  .detainField.full-width { grid-column: 1; }
+  #driverLicenseSection .licenseClass,
+  #driverLicenseSection .licenseInfo {
+    margin: var(--sp-3) var(--sp-3);
+  }
+  .app-action-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--sp-4);
+  }
+  .app-action-btns {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .btn-detain, .btn-close { flex: 1; justify-content: center; }
+}
+
+
+/* ── Toast ───────────────────────────────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #1a7f4b;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+.toast.success { background: #1a7f4b; }
+.toast.error   { background: #c53030; }
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast svg  { width: 18px; height: 18px; }
+
+input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #999;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="/css/Tests.css">
+    <title>Local Application Info</title>
+    <script src="/js/main.js" defer></script>
+    <!-- <script src="/js/Tests.js" defer></script> -->
+    <script type="module" src="/js/localApplicationInfo.js" ></script>
+    <script src="/js/layout.js" defer></script>
+
+</head>
+<body>
+<div class="page">
+
+    <!-- ── Sidebar ── -->
+    <div id="sidebar"></div>
+
+
+    <!-- ── Main Content ── -->
+    <main class="main-content">
+
+        <!-- ── Card 1: DL Application Info ── -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon purple">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <rect x="2" y="5" width="16" height="11" rx="2"/>
+                        <circle cx="7" cy="10.5" r="2"/>
+                        <line x1="11" y1="9" x2="15" y2="9"/>
+                        <line x1="11" y1="12" x2="14" y2="12"/>
+                    </svg>
+                </div>
+                <div class="card-header-text">
+                    <span class="card-header-title">Driving License Application Info</span>
+                    <span class="card-header-sub">L.D.L application overview and test progress</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="dl-info-grid">
+                    <div class="dl-info-item">
+                        <span class="dl-label">D.L. App ID</span>
+                        <span class="dl-value accent" id="dlAppID">—</span>
+                    </div>
+                    <div class="dl-info-item">
+                        <span class="dl-label">Applied For License</span>
+                        <span class="dl-value" id="dlAppliedFor">—</span>
+                    </div>
+                    <div class="dl-info-item full">
+                        <span class="dl-label">Passed Tests</span>
+                        <div class="progress-wrap">
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" id="progressFill" style="width: 0%"></div>
+                            </div>
+                            <div class="progress-label">
+                                <span id="passedTestsLabel">0 / 3 tests passed</span>
+                                <span id="passedTestsPct">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Card 2: Application Basic Info ── -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon blue">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7">
+                        <rect x="3" y="2" width="14" height="16" rx="2"/>
+                        <line x1="7" y1="7" x2="13" y2="7"/>
+                        <line x1="7" y1="10" x2="13" y2="10"/>
+                        <line x1="7" y1="13" x2="10" y2="13"/>
+                    </svg>
+                </div>
+                <div class="card-header-text">
+                    <span class="card-header-title">Application Basic Info</span>
+                    <span class="card-header-sub">Core application details and metadata</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="info-grid">
+                    <div class="info-cell">
+                        <span class="info-cell-label">ID</span>
+                        <span class="info-cell-value" id="appID">—</span>
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-cell-label">Date</span>
+                        <span class="info-cell-value" id="appDate">—</span>
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-cell-label">Fees</span>
+                        <span class="info-cell-value" id="appFees">—</span>
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-cell-label">Status</span>
+                        <span class="info-cell-value" id="appStatus">—</span>
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-cell-label">Status Date</span>
+                        <span class="info-cell-value" id="appStatusDate">—</span>
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-cell-label">Created By</span>
+                        <span class="info-cell-value" id="appCreatedBy">—</span>
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-cell-label">Type</span>
+                        <span class="info-cell-value" id="appType">—</span>
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-cell-label">Applicant</span>
+                        <span class="info-cell-value" id="appApplicant">—</span>
+                    </div>
+                    <div class="info-cell">
+                        <span class="info-cell-label">Person Info</span>
+                        <a href="#" id="appPersonInfo">View Person Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<!-- Toast -->
+<div class="toast" id="toast">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+        <polyline points="3 10 8 15 17 5"/>
+    </svg>
+    <!-- User created successfully! -->
+</div>
+</body>
+</html>

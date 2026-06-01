@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Local Application</title>
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="/css/ProcessingLA.css">
+
+    <script src="/js/main.js" defer></script>
+    <script type="module" src="/js/ProcessingLA.js" ></script>
+    <script src="/js/layout.js" defer></script>
+
+</head>
+<body>
+<div class="page">
+
+    <!-- ── Sidebar ── -->
+
+    <div id="sidebar"></div>
+
+
+    <!-- ── Main Content ── -->
+    <main class="main-content">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="breadcrumb">
+                <a href="/Sections/Applications/LocalApplication/mainLocalApplication.html">Local Applications</a>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 5l5 5-5 5"/></svg>
+                <span>Process Application</span>
+            </div>
+            <h1 class="page-title">Process Local Application</h1>
+            <p class="page-subtitle">Review and manage all steps for this driving license application</p>
+        </div>
+
+        <!-- Process Card -->
+        <div class="process-card">
+
+            <!-- Card Header -->
+            <div class="process-card-header">
+                <div class="process-card-header-left">
+                    <div class="header-icon-wrap">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <rect x="3" y="8" width="14" height="9" rx="1.5"/>
+                            <path d="M7 8V6.5a3 3 0 0 1 6 0V8"/>
+                            <circle cx="10" cy="13" r="1.2" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="header-title">Local Driving License Application</div>
+                        <div class="header-sub">L.D.L — First Time Issuance Workflow</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="process-card-body">
+
+                <!-- Application ID row -->
+                <div class="app-id-row">
+                    <div class="app-id-label-group">
+                        <span class="app-id-badge">
+                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 10h6M7 13h4"/></svg>
+                            L.D.L Application ID
+                        </span>
+                        <span class="app-id-value" id="appIdDisplay">LDL-2024-00847</span>
+                        <!-- <span class="app-id-meta">Submitted: 12 May 2024 &nbsp;·&nbsp; Status: <strong style="color:#7820a7">In Progress</strong></span> -->
+                    </div>
+                    <button class="btn btn-outline" id="showApplicationDetails">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="10" cy="10" r="7.5"/>
+                            <line x1="10" y1="9" x2="10" y2="14"/>
+                            <circle cx="10" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+                        </svg>
+                        Show Application Details
+                    </button>
+                </div>
+
+                <!-- Section 1: Schedule Tests -->
+                <div class="section">
+                    <div class="section-title">Schedule Tests</div>
+                    <div class="btn-grid-3">
+                        <button class="btn btn-schedule" id="btn-schedule-vision" onclick="scheduleTest('Vision')">
+                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <circle cx="10" cy="10" r="3"/>
+                                <path d="M2 10s3-6 8-6 8 6 8 6-3 6-8 6-8-6-8-6z"/>
+                            </svg>
+                            Schedule Vision Test
+                        </button>
+                        <button class="btn btn-schedule" id="btn-schedule-writing" onclick="scheduleTest('Writing')">
+                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M4 13.5V16h2.5l7.4-7.4-2.5-2.5L4 13.5z"/>
+                                <path d="M14.8 4.7a1.5 1.5 0 0 1 2.1 2.1l-1.1 1.1-2.1-2.1 1.1-1.1z"/>
+                            </svg>
+                            Schedule Writing Test
+                        </button>
+                        <button class="btn btn-schedule" id="btn-schedule-street" onclick="scheduleTest('Street')">
+                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M3 17l4-14h6l4 14"/>
+                                <line x1="5.5" y1="11" x2="14.5" y2="11"/>
+                            </svg>
+                            Schedule Street Test
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: License Actions -->
+                <div class="section">
+                    <div class="section-title">License Actions</div>
+                    <div class="btn-grid-2">
+                        <button class="btn btn-green btn-issueLicense" id="btn-issueLicense">
+                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="2" y="5" width="16" height="11" rx="2"/>
+                                <circle cx="7" cy="10.5" r="2"/>
+                                <line x1="11" y1="9" x2="15" y2="9"/>
+                                <line x1="11" y1="12" x2="14" y2="12"/>
+                            </svg>
+                            Issue Driving License (First Time)
+                        </button>
+                        <button class="btn btn-blue btn-showLicense" id="btn-showLicense" >
+                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="2" y="5" width="16" height="11" rx="2"/>
+                                <circle cx="7" cy="10.5" r="2"/>
+                                <line x1="11" y1="9" x2="15" y2="9"/>
+                                <line x1="11" y1="12" x2="14" y2="12"/>
+                            </svg>
+                            Show License
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: History -->
+                <div class="section">
+                    <div class="section-title">History</div>
+                    <div class="btn-grid-single">
+                        <button class="btn btn-ghost" id="showPersonHistory">
+                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <circle cx="10" cy="10" r="7.5"/>
+                                <polyline points="10 6 10 10 13 12"/>
+                            </svg>
+                            Show Person License History
+                        </button>
+                    </div>
+                </div>
+
+            </div><!-- /card body -->
+        </div><!-- /process-card -->
+
+    </main>
+</div>
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+
+</body>
+</html>

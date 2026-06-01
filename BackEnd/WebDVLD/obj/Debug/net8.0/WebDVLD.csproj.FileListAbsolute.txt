@@ -1,0 +1,6 @@
+D:\WebDVLD\WebDVLD\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\WebDVLD\WebDVLD\obj\Debug\net8.0\WebDVLD.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebDVLD\WebDVLD\obj\Debug\net8.0\WebDVLD.AssemblyInfoInputs.cache
+D:\WebDVLD\WebDVLD\obj\Debug\net8.0\WebDVLD.AssemblyInfo.cs
+D:\WebDVLD\WebDVLD\obj\Debug\net8.0\WebDVLD.csproj.CoreCompileInputs.cache
+D:\WebDVLD\WebDVLD\obj\Debug\net8.0\WebDVLD.MvcApplicationPartsAssemblyInfo.cache

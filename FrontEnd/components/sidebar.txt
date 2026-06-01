@@ -1,0 +1,188 @@
+    <aside class="cover" aria-label="Sidebar navigation">
+       <div class="me">
+    <div class="avatar">
+        <div class="avatar-circle">
+            <img id="avatar-img" src="" alt="Avatar" 
+                 style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:none;" />
+            <span id="avatar-initials">AY</span>
+        </div>
+        <span class="user-name" id="username"></span>
+    </div>
+    <hr />
+</div>
+
+        <nav class="nav" aria-label="Main navigation">
+            <a href="/Sections/People/people.html" >
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="10" cy="6" r="3.5"/>
+                    <path d="M2.5 17c0-4.1 3.4-6.5 7.5-6.5s7.5 2.4 7.5 6.5"/>
+                </svg>
+                People
+            </a>
+
+            <!-- Applications dropdown -->
+            <div class="nav-dropdown " id="applicationsDropdown" >
+                <div class="nav-dropdown-toggle" onclick="toggleDropdown('applicationsDropdown')">
+                    <span class="toggle-left" >
+                        <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <rect x="2.5" y="2.5" width="6" height="6" rx="1.5"/>
+                            <rect x="11.5" y="2.5" width="6" height="6" rx="1.5"/>
+                            <rect x="2.5" y="11.5" width="6" height="6" rx="1.5"/>
+                            <rect x="11.5" y="11.5" width="6" height="6" rx="1.5"/>
+                        </svg>
+                        Applications
+                    </span>
+                    <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 7.5l5 5 5-5"/>
+                    </svg>
+                </div>
+
+                <div class="nav-submenu">
+                    <div class="nav-submenu-inner">
+
+                        <!-- Driving License Services -->
+                        <div class="nav-sub-dropdown" id="drivingLicenseServices">
+                            <div class="nav-sub-dropdown-toggle" onclick="toggleSubDropdown('drivingLicenseServices', event)">
+                                <span class="sub-toggle-left">Driving License Services</span>
+                                <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 7.5l5 5 5-5"/>
+                                </svg>
+                            </div>
+                            <div class="nav-sub-submenu">
+                                <div class="nav-sub-submenu-inner">
+
+                                    <!-- New Driving License -->
+                                    <div class="nav-sub-dropdown" id="newDrivingLicense">
+                                        <div class="nav-sub-dropdown-toggle" onclick="toggleSubDropdown('newDrivingLicense', event)">
+                                            <span class="sub-toggle-left">New Driving License</span>
+                                            <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M5 7.5l5 5 5-5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="nav-sub-submenu">
+                                            <div class="nav-sub-submenu-inner">
+                                                <a href="/Sections/Applications/LocalApplication/addLocalApplication.html">Local License</a>
+                                                <a href="/Sections/Applications/InternationalApplication/Internationallicenseapp.html">International License</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <a href="/Sections/Applications/RenewApplication/renewApplication.html">Renew Driving License</a>
+                                    <a href="/Sections/Applications/ReplacementApplication/damagedOrLost.html">Replacement for Lost or Damaged License</a>
+                                    <a href="/Sections/DetainRelseLicense/Releasedetainlicense.html">Release Detained Driving License</a>
+                                    <a href="/Sections/Applications/LocalApplication/mainLocalApplication.html">Retake Test</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Manage Applications -->
+                        <div class="nav-sub-dropdown" id="manageApplications">
+                            <div class="nav-sub-dropdown-toggle" onclick="toggleSubDropdown('manageApplications', event)">
+                                <span class="sub-toggle-left">Manage Applications</span>
+                                <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 7.5l5 5 5-5"/>
+                                </svg>
+                            </div>
+                            <div class="nav-sub-submenu">
+                                <div class="nav-sub-submenu-inner">
+                                    <a href="/Sections/Applications/LocalApplication/mainLocalApplication.html">Local Driving License Applications</a>
+                                    <a href="/Sections/Applications/InternationalApplication/Internationallicenseapplications.html">International License Applications</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detain Licenses -->
+                        <div class="nav-sub-dropdown" id="detainLicenses">
+                            <div class="nav-sub-dropdown-toggle" onclick="toggleSubDropdown('detainLicenses', event)">
+                                <span class="sub-toggle-left">Detain Licenses</span>
+                                <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 7.5l5 5 5-5"/>
+                                </svg>
+                            </div>
+                            <div class="nav-sub-submenu">
+                                <div class="nav-sub-submenu-inner">
+                                    <a href="/Sections/DetainRelseLicense/Listdetainedlicense.html">Manage Detained Licenses</a>
+                                    <a href="/Sections/DetainRelseLicense/Detain.html">Detain License</a>
+                                    <a href="/Sections/DetainRelseLicense/Releasedetainlicense.html">Release Detained License</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Direct Links -->
+                        <a href="/Sections/Applications/ManageApplicationTypes/ManageApplicationType.html">Manage Application Types</a>
+                        <a href="/Sections/Applications/ManageTestTypes/ManageTestTypes.html">Manage Test Types</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <a href="/Sections/Users/mainUser.html">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="6" cy="10" r="2.5"/>
+                    <circle cx="14" cy="5" r="2.5"/>
+                    <circle cx="14" cy="15" r="2.5"/>
+                    <line x1="8.2" y1="8.8" x2="11.8" y2="6.2"/>
+                    <line x1="8.2" y1="11.2" x2="11.8" y2="13.8"/>
+                </svg>
+                Users
+            </a>
+            <a href="/Sections/Drivers/ManageDrivers.html">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="3" y="8" width="14" height="9" rx="1.5"/>
+                    <path d="M7 8V6.5a3 3 0 0 1 6 0V8"/>
+                    <circle cx="10" cy="13" r="1.2" fill="currentColor" stroke="none"/>
+                </svg>
+                Drivers
+            </a>
+            <!-- Account Settings dropdown -->
+            <div class="nav-dropdown" id="accountSettingsDropdown">
+                <div class="nav-dropdown-toggle" onclick="toggleDropdown('accountSettingsDropdown')">
+                    <span class="toggle-left">
+                        <svg class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <circle cx="10" cy="10" r="7.5"/>
+                            <circle cx="10" cy="10" r="2.5"/>
+                            <line x1="10" y1="2.5" x2="10" y2="5"/>
+                            <line x1="10" y1="15" x2="10" y2="17.5"/>
+                            <line x1="2.5" y1="10" x2="5" y2="10"/>
+                            <line x1="15" y1="10" x2="17.5" y2="10"/>
+                        </svg>
+                        Account Settings
+                    </span>
+                    <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 7.5l5 5 5-5"/>
+                    </svg>
+                </div>
+
+                <div class="nav-submenu">
+                    <div class="nav-submenu-inner">
+                        <a href="/Sections/AccountSettings/CurrentUserInfo.html">
+                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <circle cx="10" cy="6" r="3.5"/>
+                                <path d="M2.5 17c0-4.1 3.4-6.5 7.5-6.5s7.5 2.4 7.5 6.5"/>
+                            </svg>
+                            Current User Info
+                        </a>
+                        <a href="/Sections/AccountSettings/changePassword.html">
+                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <rect x="3" y="8" width="14" height="9" rx="1.5"/>
+                                <path d="M7 8V6.5a3 3 0 0 1 6 0V8"/>
+                                <circle cx="10" cy="13" r="1.2" fill="currentColor" stroke="none"/>
+                            </svg>
+                            Change Password
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="loginOut">
+            <a href="/Sections/Users/login.html">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M7.5 2.5H4a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h3.5"/>
+                    <path d="M13 13.5l3.5-3.5L13 6.5"/>
+                    <line x1="16.5" y1="10" x2="7.5" y2="10"/>
+                </svg>
+                Log Out
+            </a>
+        </div>
+    </aside>

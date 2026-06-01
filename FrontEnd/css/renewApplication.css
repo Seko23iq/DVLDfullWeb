@@ -1,0 +1,85 @@
+ /* ── Application NEW License Info Grid ──────────────────────── */
+    .appNewInfo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-3) var(--sp-5);
+      padding: var(--sp-5);
+    }
+
+    /* Notes — full width */
+    .appNewInfo .appField.full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* Notes textarea / value */
+    .appFieldValue.notes-value {
+      font-size: 13.5px;
+      font-weight: 400;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* Total Fees — highlighted */
+    .appFieldValue.total-fees-value {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--accent) !important;
+    }
+
+    .appField textarea.notes-value {
+  resize: vertical;
+  min-height: 70px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-family: var(--font-body);
+  font-style: normal;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  width: 100%;
+}
+
+.appField textarea.notes-value:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(120, 32, 167, 0.12);
+}
+    @media (max-width: 768px) {
+      .appNewInfo {
+        grid-template-columns: 1fr;
+        padding: var(--sp-4);
+      }
+      .appNewInfo .appField.full-width {
+        grid-column: 1;
+      }
+    }
+
+    
+/* ── Toast ───────────────────────────────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #1a7f4b;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+.toast.success { background: #1a7f4b; }
+.toast.error   { background: #c53030; }
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast svg  { width: 18px; height: 18px; }
+

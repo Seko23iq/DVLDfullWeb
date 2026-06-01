@@ -1,0 +1,11 @@
+<div class="pagination-bar">
+    <span class="page-info" id="pageInfo">Page 1 of 1</span>
+    <div class="pagination-btns">
+        <button class="pg-btn" id="btnFirst"   onclick="goToPage(1)"           title="First">«</button>
+        <button class="pg-btn" id="btnPrev"    onclick="goToPage(currentPage - 1)" title="Previous">‹</button>
+        <div class="pg-numbers" id="pgNumbers"></div>
+        <button class="pg-btn" id="btnNext"    onclick="goToPage(currentPage + 1)" title="Next">›</button>
+        <button class="pg-btn" id="btnLast"    onclick="goToPage(totalPages)"  title="Last">»</button>
+    </div>
+    <span class="page-total" id="totalCount"></span>
+</div>

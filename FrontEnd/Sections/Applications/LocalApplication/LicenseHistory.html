@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/mainStyle.css" />
+    <link rel="stylesheet" href="/css/personInfo.css" />
+    <link rel="stylesheet" href="/css/LicenseHistory.css">
+
+    <script src="/js/personInfoScript.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/layout.js" defer></script>
+    <script type="module" src="/js/LicenseHistory.js"></script>
+    
+    <title>License History</title>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════════
+        SIDEBAR
+  ══════════════════════════════════════ -->
+    <div id="sidebar"></div>
+
+
+  <!-- ══════════════════════════════════════
+        MAIN CONTENT
+  ══════════════════════════════════════ -->
+  <main>
+
+    <!-- Title -->
+    <div class="title-bar">
+        <h1>License History</h1>
+    </div>
+
+    <!-- ── Person Info ── -->
+    <div class="personInfo">
+        <div class="personID">
+            <span>Person ID</span>
+            <span class="id" id="personID">—</span>
+        </div>
+        <div class="personName">
+            <span>Name</span>
+            <span class="Name" id="personName">—</span>
+        </div>
+        <div class="personNationalNo">
+            <span>National No</span>
+            <span class="NationalNo" id="personNationalNo">—</span>
+        </div>
+        <div class="personGendor">
+            <span>Gender</span>
+            <span class="Gendor" id="personGendor">—</span>
+        </div>
+        <div class="personEmail">
+            <span>Email</span>
+            <span class="Email" id="personEmail">—</span>
+        </div>
+        <div class="personAddress">
+            <span>Address</span>
+            <span class="Address" id="personAddress">—</span>
+        </div>
+        <div class="personDateOfBirth">
+            <span>Date Of Birth</span>
+            <span class="DateOfBirth" id="personDateOfBirth">—</span>
+        </div>
+        <div class="personCountry">
+            <span>Country</span>
+            <span class="Country" id="personCountry">—</span>
+        </div>
+        <div class="personImage">
+            <input type="image" id="personImage" src="/Images/MyImage.jpg" alt="Person Image">
+        </div>
+    </div>
+
+    <!-- ── Driver Licenses Section ── -->
+    <section class="licenses-section">
+
+        <h2 class="licenses-section-title">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="2" y="5" width="16" height="11" rx="2"/>
+                <line x1="6" y1="9" x2="10" y2="9"/>
+                <line x1="6" y1="12" x2="8" y2="12"/>
+                <circle cx="14" cy="10.5" r="2.5"/>
+            </svg>
+            Driver Licenses
+        </h2>
+
+        <!-- Tab Control -->
+        <div class="tab-control">
+
+            <!-- Tab Header -->
+            <div class="tab-header">
+                <button class="tab-btn active" onclick="switchTab('local', this)">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <circle cx="8" cy="6" r="3"/>
+                        <path d="M2 14c0-3.3 2.7-5 6-5s6 1.7 6 5"/>
+                    </svg>
+                    Local
+                </button>
+                <button class="tab-btn" onclick="switchTab('international', this)">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <circle cx="8" cy="8" r="6"/>
+                        <path d="M8 2c0 0-3 2.5-3 6s3 6 3 6"/>
+                        <path d="M8 2c0 0 3 2.5 3 6s-3 6-3 6"/>
+                        <line x1="2" y1="8" x2="14" y2="8"/>
+                    </svg>
+                    International
+                </button>
+            </div>
+
+            <!-- Local Tab Panel -->
+            <div class="tab-panel active" id="tab-local">
+                <p class="history-label">Local Licenses History</p>
+                <div class="table-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Lic. ID</th>
+                                <th>App. ID</th>
+                                <th>Class Name</th>
+                                <th>Issue Date</th>
+                                <th>Expiration Date</th>
+                                <th>Is Active</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody id="localLicensesBody">
+                            <tr>
+                                <td colspan="6">
+                                    <div class="empty-state">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                            <line x1="7" y1="9" x2="12" y2="9"/>
+                                            <line x1="7" y1="13" x2="10" y2="13"/>
+                                        </svg>
+                                        No local licenses found.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- International Tab Panel -->
+            <div class="tab-panel" id="tab-international">
+                <p class="history-label">International Licenses History</p>
+                <div class="table-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Int. License ID</th>
+                                <th>App. ID</th>
+                                <th>Class Name</th>
+                                <th>Issue Date</th>
+                                <th>Expiration Date</th>
+                                <th>Is Active</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody id="internationalLicensesBody">
+                            <tr>
+                                <td colspan="6">
+                                    <div class="empty-state">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                                            <circle cx="12" cy="12" r="9"/>
+                                            <path d="M12 3c0 0-4 3.5-4 9s4 9 4 9"/>
+                                            <path d="M12 3c0 0 4 3.5 4 9s-4 9-4 9"/>
+                                            <line x1="3" y1="12" x2="21" y2="12"/>
+                                        </svg>
+                                        No international licenses found.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+    function switchTab(tabName, btn) {
+        // Update buttons
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Update panels
+        document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
+        document.getElementById(`tab-${tabName}`).classList.add("active");
+    }
+</script>
+
+</body>
+</html>

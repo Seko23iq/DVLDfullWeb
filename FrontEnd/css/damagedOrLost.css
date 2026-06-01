@@ -1,0 +1,430 @@
+/* ── Main layout ────────────────────────────────────────────── */
+main {
+  padding: var(--sp-4) var(--sp-7) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+.title-bar { margin-bottom: 0; }
+/* ── Shared Card Shell ──────────────────────────────────────── */
+.section-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.section-title svg { color: var(--accent); }
+/* ── Filter Card ────────────────────────────────────────────── */
+.filter-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+.filter-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.filter-card-header svg { color: var(--accent); }
+.filter-card-body {
+  padding: var(--sp-4) var(--sp-5);
+}
+/* ── Filter Row: two columns ────────────────────────────────── */
+.filter-two-col {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--sp-4) var(--sp-6);
+  align-items: end;
+}
+.filter-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.field-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.filter-input-group {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.filter-input {
+  flex: 1;
+  min-width: 180px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.filter-input::placeholder { color: var(--muted); opacity: 0.7; }
+.filter-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(120, 32, 167, 0.12);
+}
+.btn-search {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  height: 40px;
+  padding: 0 20px;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+.btn-search:hover  { background: var(--accent-hover); }
+.btn-search:active { transform: scale(0.98); }
+.btn-search:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #999;
+}
+/* ── Radio Group (Replacement For) ─────────────────────────── */
+.filter-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  align-self: end;
+  padding-bottom: 2px;
+}
+.filter-right-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+}
+.radio-group {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: center;
+}
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  user-select: none;
+}
+.radio-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: var(--bg);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  flex-shrink: 0;
+  position: relative;
+}
+.radio-option input[type="radio"]:checked {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+.radio-option input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+.radio-option input[type="radio"]:focus-visible {
+  box-shadow: 0 0 0 3px rgba(120, 32, 167, 0.18);
+  outline: none;
+}
+input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #999;
+}
+/* ── Radio Disabled State ───────────────────────────────────── */
+.radio-option input[type="radio"]:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: var(--line);
+  background: var(--bg);
+}
+
+.radio-option input[type="radio"]:disabled:checked {
+  border-color: var(--muted);
+  background: var(--muted);
+  opacity: 0.5;
+}
+
+.radio-option input[type="radio"]:disabled:checked::after {
+  background: #fff;
+}
+
+/* ── Label تصبح مظللة أيضاً ────────────────────────────────── */
+.radio-option:has(input:disabled) {
+  cursor: not-allowed;
+  opacity: 0.45;
+  pointer-events: none;
+}
+/* Pill-style radio labels */
+.radio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--bg);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.radio-option input[type="radio"]:checked + .radio-pill {
+  border-color: var(--accent);
+  background: rgba(120, 32, 167, 0.08);
+  color: var(--accent);
+}
+.radio-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
+/* ── Driver License Info (reuse driverLicenseInfo.css) ──────── */
+#driverLicenseSection .licenseClass,
+#driverLicenseSection .licenseInfo {
+  max-width: 100%;
+  margin: var(--sp-4) var(--sp-5);
+}
+#driverLicenseSection .licenseClass { margin-top: var(--sp-5); }
+#driverLicenseSection .licenseInfo  { margin-bottom: var(--sp-5); }
+/* ── Application Info Grid ──────────────────────────────────── */
+.appInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3) var(--sp-5);
+  padding: var(--sp-5);
+}
+.appField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.appField:hover {
+  border-color: rgba(120, 32, 167, 0.35);
+  box-shadow: 0 0 0 3px rgba(120, 32, 167, 0.06);
+}
+.appField > span:first-child {
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+}
+.appFieldValue {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.appFieldValue.mono {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--accent);
+}
+.fees-value {
+  font-weight: 700;
+  color: #0d7a3a !important;
+}
+/* ── Action Bar ─────────────────────────────────────────────── */
+.app-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+.app-action-links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+.btn-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--accent-2);
+  border: 1.5px solid #bfdbfe;
+  background: #eff6ff;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.btn-action-link:hover {
+  background: #dbeafe;
+  border-color: var(--accent-2);
+  color: #1d4ed8;
+  text-decoration: none;
+}
+.app-action-btns {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.btn-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 18px;
+  border-radius: var(--radius-md);
+  background: #f9fafb;
+  color: #374151;
+  border: 1.5px solid var(--line);
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.btn-close:hover { background: #f3f4f6; border-color: #9ca3af; }
+.btn-issue {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 22px;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+.btn-issue:hover  { background: var(--accent-hover); }
+.btn-issue:active { transform: scale(0.98); }
+.btn-issue:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #999;
+}
+.btn-action-link.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  main { padding: var(--sp-4) var(--sp-4) var(--sp-6); gap: var(--sp-4); }
+  .filter-two-col {
+    grid-template-columns: 1fr;
+  }
+  .appInfo { grid-template-columns: 1fr; padding: var(--sp-4); }
+  #driverLicenseSection .licenseClass,
+  #driverLicenseSection .licenseInfo {
+    margin: var(--sp-3) var(--sp-3);
+  }
+  .app-action-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--sp-4);
+  }
+  .app-action-btns {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .btn-issue, .btn-close { flex: 1; justify-content: center; }
+}
+
+  
+/* ── Toast ───────────────────────────────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #1a7f4b;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+.toast.success { background: #1a7f4b; }
+.toast.error   { background: #c53030; }
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast svg  { width: 18px; height: 18px; }

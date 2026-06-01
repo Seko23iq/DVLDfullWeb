@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/editPerson.css">
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="/css/addPerson.css">
+    
+    <script src="/js/editPerson.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/layout.js" defer></script>
+    <title>Edit Person</title>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══════════════════════════════════════
+        SIDEBAR
+  ══════════════════════════════════════ -->
+  <div id="sidebar"></div>
+
+  <!-- ══════════════════════════════════════
+        MAIN CONTENT
+  ══════════════════════════════════════ -->
+  <main>
+    <div class="title-bar">
+      <h1>Edit Person</h1>
+    </div>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast"></div>
+
+    <div class="addForm">
+
+      <!-- ── Image Upload ── -->
+      <div class="imageUpload" id="imageUploadArea">
+        <div class="imagePreviewWrap">
+          <!-- Updated it in future -->
+          <img id="imagePreview" src="/Images/defaultImage.webp" alt="Preview" />
+        </div>
+        <label class="imageLabel" for="imageInput">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M3 13l4-4 3 3 3-4 4 5"/>
+            <rect x="2" y="3" width="16" height="14" rx="2"/>
+            <circle cx="7" cy="8" r="1.3" fill="currentColor" stroke="none"/>
+          </svg>
+          Choose Photo
+        </label>
+        <input type="file" id="imageInput" accept="image/*" hidden />
+        <span class="imageHint">JPG, PNG — max 5 MB</span>
+      </div>
+
+      <!-- ── Fields Grid ── -->
+      <div class="fieldsGrid">
+
+        <!-- National No -->
+        <div class="field-group">
+          <label for="nationalNo">National No <span class="req">*</span></label>
+          <input type="text" id="nationalNo" class="nationalNo" placeholder="e.g. N1080" />
+          <span class="field-error" id="err-nationalNo"></span>
+        </div>
+
+      
+
+        <!-- First Name -->
+        <div class="field-group">
+          <label for="firstName">First Name <span class="req">*</span></label>
+          <input type="text" id="firstName" class="firstName" placeholder="e.g. Ali" />
+          <span class="field-error" id="err-firstName"></span>
+        </div>
+
+        <!-- Second Name -->
+        <div class="field-group">
+          <label for="secondName">Second Name <span class="req">*</span></label>
+          <input type="text" id="secondName" class="secondName"  placeholder="e.g. Ahmed" />
+          <span class="field-error" id="err-secondName"></span>
+        </div>
+
+        <!-- Third Name -->
+        <div class="field-group">
+          <label for="thirdName">Third Name</label>
+          <input type="text" id="thirdName" class="thirdName" placeholder="e.g. Omar" />
+          <span class="field-error" id="err-thirdName"></span>
+        </div>
+
+        <!-- Last Name -->
+        <div class="field-group">
+          <label for="lastName">Last Name <span class="req">*</span></label>
+          <input type="text" id="lastName" class="lastName" placeholder="e.g. Hassan" />
+          <span class="field-error" id="err-lastName"></span>
+        </div>
+      
+        <!-- Nationality -->
+        <div class="field-group">
+          <label for="nationality">Nationality <span class="req">*</span></label>
+          <select id="nationality">
+            <option value="">-- Select Nationality --</option>
+          </select>
+          <span class="field-error" id="err-nationality"></span>
+        </div>
+        <!-- Gender -->
+        <div class="field-group">
+          <label for="gender">Gender <span class="req">*</span></label>
+          <select id="gender" class="gender">
+            <option value="">— Select —</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <span class="field-error" id="err-gender"></span>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="field-group">
+          <label for="dateOfBirth">Date of Birth <span class="req">*</span></label>
+          <input type="date" id="dateOfBirth" class="dateOfBirth"/>
+          <span class="field-error" id="err-dateOfBirth"></span>
+        </div>
+
+        
+        <!-- Email -->
+        <div class="field-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="email" placeholder="e.g. ali@gmail.com" />
+          <span class="field-error" id="err-email"></span>
+        </div>
+      
+
+      
+
+        <!-- Phone -->
+        <div class="field-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" class="phone" placeholder="e.g. 07701234567" />
+          <span class="field-error" id="err-phone"></span>
+        </div>
+
+
+
+          <!-- Address -->
+        <div class="field-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" class="address" placeholder="e.g. Aqab, South St" />
+          <span class="field-error" id="err-address"></span>
+        </div>
+      </div><!-- /fieldsGrid -->
+
+      <!-- ── Actions ── -->
+      <div class="formActions">
+        <button class="btn-cancel" onclick="window.location.href='/Sections/People/people.html'">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="5" y1="5" x2="15" y2="15"/>
+            <line x1="15" y1="5" x2="5" y2="15"/>
+          </svg>
+          Cancel
+        </button>
+        <button class="btn-save" id="btnSave">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 10.5l4.5 4.5 7.5-8"/>
+          </svg>
+          Save Person
+        </button>
+      </div>
+
+    </div><!-- /addForm -->
+  </main>
+</div>
+
+</body>
+</html>

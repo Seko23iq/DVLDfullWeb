@@ -1,0 +1,82 @@
+
+:root {
+    --badge-new-bg:      #e6f1fb;
+    --badge-new-fg:      #185fa5;
+
+    --badge-canceled-bg: #fbeaf0;
+    --badge-canceled-fg: #993556;
+
+    --badge-complete-bg: #e8f5e9; 
+    --badge-complete-fg: #28a124;
+}
+
+main {
+    padding: var(--sp-1) var(--sp-4) var(--sp-6);
+}
+
+.badge-new   { background: var(--badge-new-bg); color: var(--badge-new-fg); }
+.badge-canceled { background: var(--badge-canceled-bg);  color: var(--badge-canceled-fg);  }
+.badge-complete { background: var(--badge-complete-bg);  color: var(--badge-complete-fg);  }
+
+.btn-cancel:disabled,
+.btn-delete:disabled {
+    border: 1px solid #e5e7eb;
+    background: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn-cancel:disabled:hover,
+.btn-delete:disabled:hover { background: #f3f4f6; }
+.btn-cancel {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+.btn-cancel {
+    border: 1px solid #f7c1c1;
+    background: #fcebeb;
+    color: #a32d2d;
+}
+.btn-cancel:hover { background: #f7c1c1; }
+.btn-cancel svg{
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+}
+
+/* ── Toast ───────────────────────────────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #1a7f4b;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+.toast.success { background: #1a7f4b; }
+.toast.error   { background: #c53030; }
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast svg  { width: 18px; height: 18px; }
+

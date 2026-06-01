@@ -1,0 +1,272 @@
+/* ===================================================================
+   addUser.css  —  Add User Page
+   Depends on: mainStyle.css, peopleStyle.css, personInfo.css
+=================================================================== */
+
+/* ── Search Section ─────────────────────────────────────────────── */
+.search-section {
+    display: flex;
+    gap: var(--sp-3);
+    align-items: flex-end;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: var(--sp-5);
+    max-width: 860px;
+    margin: 0 auto var(--sp-5);
+}
+
+.search-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.search-field label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+}
+
+.search-field input {
+    height: 42px;
+    padding: 0 14px;
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--line);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.search-field input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(120, 32, 167, .12);
+}
+
+.btn-search {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    height: 42px;
+    padding: 0 22px;
+    border-radius: var(--radius-md);
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    white-space: nowrap;
+}
+
+.btn-search svg { width: 16px; height: 16px; flex-shrink: 0; }
+.btn-search:hover  { background: var(--accent-hover); }
+.btn-search:active { transform: scale(0.98); }
+
+/* ── Not Found ───────────────────────────────────────────────────── */
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-3);
+    padding: var(--sp-7);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    max-width: 860px;
+    margin: 0 auto var(--sp-5);
+    animation: fadeSlideIn 0.3s ease;
+}
+
+.not-found svg { color: var(--muted); opacity: 0.5; }
+.not-found p   { color: var(--muted); font-size: 14px; }
+
+/* ── Add User Form ───────────────────────────────────────────────── */
+.addUserForm {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: var(--sp-6);
+    max-width: 860px;
+    margin: var(--sp-5) auto;
+    animation: fadeSlideIn 0.35s ease;
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.form-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: var(--sp-5);
+    padding-bottom: var(--sp-3);
+    border-bottom: 1.5px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+}
+
+.form-title svg { color: var(--accent); width: 20px; height: 20px; }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4) var(--sp-5);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+}
+
+.form-group input,
+.form-group select {
+    height: 42px;
+    padding: 0 14px;
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--line);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: auto;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(120, 32, 167, .12);
+}
+
+.form-group input[readonly] {
+    background: var(--line);
+    color: var(--muted);
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+.form-group input.error,
+.form-group select.error { border-color: #e05252; }
+
+.error-msg {
+    font-size: 11.5px;
+    color: #c53030;
+    margin-top: 2px;
+}
+
+/* ── Form Actions ────────────────────────────────────────────────── */
+.form-actions {
+    margin-top: var(--sp-5);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--sp-3);
+}
+
+.btn-cancel {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    height: 40px;
+    padding: 0 20px;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--muted);
+    border: 1.5px solid var(--line);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.btn-cancel:hover {
+    background: var(--bg);
+    border-color: #bbb;
+    color: var(--ink);
+}
+
+.btn-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    height: 40px;
+    padding: 0 24px;
+    border-radius: var(--radius-md);
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+
+.btn-submit svg    { width: 16px; height: 16px; }
+.btn-submit:hover  { background: var(--accent-hover); }
+.btn-submit:active { transform: scale(0.98); }
+.btn-submit:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ── Toast ───────────────────────────────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #1a7f4b;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+.toast.success { background: #1a7f4b; }
+.toast.error   { background: #c53030; }
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast svg  { width: 18px; height: 18px; }
+
+/* ── Hidden utility ──────────────────────────────────────────────── */
+.hidden { display: none !important; }
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .search-section { flex-direction: column; }
+    .btn-search     { width: 100%; justify-content: center; }
+    .form-grid      { grid-template-columns: 1fr; }
+}

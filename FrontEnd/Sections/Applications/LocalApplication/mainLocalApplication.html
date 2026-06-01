@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="/css/peopleStyle.css">
+    <link rel="stylesheet" href="/css/mainLocalApplication.css">
+    <script src="/js/main.js" defer></script>
+    <!-- <script src="/Sections/People/scriptAPI.js"  type="module"></script> -->
+    <script src="/js/mainLocalApplication.js" defer></script>
+    <script src="/js/layout.js" defer></script>
+
+    <title>Local Driving License Applications</title>
+</head>
+<body>
+<div class="page">
+
+
+    <div id="sidebar"></div>
+
+
+    <main>
+        <div class="title-bar">
+            <h1>Local Driving License Applications</h1>
+            <div class="controls">
+                <div class="filter-group">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="9" cy="9" r="6"/>
+                        <line x1="13.5" y1="13.5" x2="17" y2="17"/>
+                    </svg>
+
+                    <select class="filter-select" id="filterBy">
+                        <option value="">— Filter By —</option>
+                        <option value="L.D.L AppID">L.D.L AppID</option>
+                        <!-- <option value="NationalNo">NationalNo</option> -->
+                        <option value="Full Name">Full Name</option>
+                        <option value="Status">Status</option>
+                    </select>
+
+                    <input type="text" id="filterInput" placeholder="Search…" />
+
+                    <select class="filter-select" id="statusSelect" style="display:none">
+                        <option value="">All</option>
+                        <option value="New">New</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Cancelled">Canceled</option>
+                    </select>
+
+                    <span class="filter-label" id="errorMsg" style="color:red; display:none;"></span>
+                </div>
+
+                <button class="btn-add" onclick="window.location.href='/Sections/Applications/LocalApplication/addLocalApplication.html'">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="10" y1="4" x2="10" y2="16"/>
+                        <line x1="4" y1="10" x2="16" y2="10"/>
+                    </svg>
+                    Add Local Driving License Application
+                </button>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>L.D.AppID</th>
+                        <th>Driving Class</th>
+                        <!-- <th>NationalNo</th> -->
+                        <th>FullName</th>
+                        <th>Status</th>
+                        <th>PassedTest</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody id="LocalApplicationTableBody">
+                    <!-- Rows injected by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ── Pagination ── -->
+        <div class="pagination-bar">
+            <span class="page-info" id="pageInfo">Page 1 of 1</span>
+            <div class="pagination-btns">
+                <button class="pg-btn" id="btnFirst" title="First">«</button>
+                <button class="pg-btn" id="btnPrev"   title="Previous">‹</button>
+                <div class="pg-numbers" id="pgNumbers"></div>
+                <button class="pg-btn" id="btnNext"   title="Next">›</button>
+                <button class="pg-btn" id="btnLast"  title="Last">»</button>
+            </div>
+            <span class="page-total" id="totalCount"></span>
+        </div>
+    </main>
+</div>
+<div class="toast" id="toast">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+        <polyline points="3 10 8 15 17 5"/>
+    </svg>
+    <!-- User created successfully! -->
+</div>
+</body>
+</html>

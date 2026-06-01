@@ -1,0 +1,10 @@
+.title-bar h1 {
+    margin: var(--sp-5) 0; 
+
+}
+tbody td {
+    padding: 14px 20px;
+}
+thead th {
+    padding: 13px 16px;
+}

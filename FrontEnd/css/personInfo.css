@@ -1,0 +1,137 @@
+/* ===================================================================
+   personInfo.css  —  Person Details Page
+   Depends on mainStyle.css and peopleStyle.css
+=================================================================== */
+
+.title-bar {
+    margin-bottom: var(--sp-2);
+}
+main {
+    padding: var(--sp-4) var(--sp-7) var(--sp-3);
+}
+
+/* ── Person Info Card ─────────────────────────────────────────── */
+.personInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: var(--sp-4) var(--sp-6);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: var(--sp-6);
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* ── Image cell — spans right column, all rows ────────────────── */
+.personImage {
+    grid-column: 2;
+    grid-row: 1 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--sp-3);
+}
+
+.personImage input[type="image"] {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--line);
+    box-shadow: 0 4px 16px rgba(120, 32, 167, 0.15);
+    cursor: default;
+    transition: box-shadow 0.2s;
+}
+
+.personImage input[type="image"]:hover {
+    box-shadow: 0 6px 24px rgba(120, 32, 167, 0.28);
+}
+
+/* ── Info fields — left column ────────────────────────────────── */
+.personID,
+.personName,
+.personNationalNo,
+.personGendor,
+.personEmail,
+.personAddress,
+.personDateOfBirth,
+.personCountry {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--sp-3) var(--sp-4);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.personID:hover,
+.personName:hover,
+.personNationalNo:hover,
+.personGendor:hover,
+.personEmail:hover,
+.personAddress:hover,
+.personDateOfBirth:hover,
+.personCountry:hover {
+    border-color: rgba(120, 32, 167, 0.35);
+    box-shadow: 0 0 0 3px rgba(120, 32, 167, 0.06);
+}
+
+/* Label */
+.personInfo div span:first-child {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+}
+
+/* Value */
+.personInfo div span:last-child {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--ink);
+}
+
+/* Email value — accent color */
+.personEmail .Email {
+    color: var(--accent-2);
+}
+
+/* ID value — monospaced */
+.personID .id {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: var(--accent);
+}
+/* Update the peopleStyle to this */
+.badge {
+    padding: 3px 0px;
+}
+/* Update the peopleStyle to this */
+.badge-male   { background: var(--bg); } 
+.badge-female { background: var(--bg);  }
+
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .personInfo {
+        grid-template-columns: 1fr;
+        padding: var(--sp-4);
+    }
+
+    .personImage {
+        grid-column: 1;
+        grid-row: auto;
+        margin-bottom: var(--sp-3);
+    }
+
+    .personImage input[type="image"] {
+        width: 120px;
+        height: 120px;
+    }
+}

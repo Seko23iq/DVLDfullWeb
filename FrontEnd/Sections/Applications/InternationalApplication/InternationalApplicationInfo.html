@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/mainStyle.css" />
+  <link rel="stylesheet" href="/css/peopleStyle.css" />
+  <link rel="stylesheet" href="/css/DriverLicenseInfo.css" />
+  <link rel="stylesheet" href="/css/InternationalApplicationInfo.css" />
+
+  <script type="module" src="/js/Driverinternationallicenseinfo.js" ></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/layout.js" defer></script>
+
+  <title>Driver International License Info</title>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════════
+        SIDEBAR
+  ══════════════════════════════════════ -->
+  <div id="sidebar"></div>
+
+  <!-- ══════════════════════════════════════
+        MAIN CONTENT
+  ══════════════════════════════════════ -->
+  <main>
+
+    <!-- Title -->
+    <div class="title-bar">
+      <h1>Driver International License Info</h1>
+    </div>
+
+    <!-- Info Grid -->
+    <div class="licenseInfo">
+
+      <!-- Name — full width -->
+      <div class="licenseName">
+        <span>Name</span>
+        <span class="Name">-</span>
+      </div>
+
+      <!-- Row: Int. License ID | Application ID -->
+      <div class="licenseIntID">
+        <span>Int. License ID</span>
+        <span class="IntLicenseID">-</span>
+      </div>
+      <div class="licenseAppID">
+        <span>Application ID</span>
+        <span class="AppID">-</span>
+      </div>
+
+      <!-- Row: License ID | Is Active? -->
+      <div class="licenseID">
+        <span>License ID</span>
+        <span class="LicenseID">-</span>
+      </div>
+      <div class="licenseIsActive">
+        <span>Is Active?</span>
+        <span class="IsActive">
+          <span class="status-badge status-active">-</span>
+        </span>
+      </div>
+
+      <!-- Row: National No | Date Of Birth -->
+      <div class="licenseNationalNo">
+        <span>National No</span>
+        <span class="NationalNo">-</span>
+      </div>
+      <div class="licenseDateOfBirth">
+        <span>Date Of Birth</span>
+        <span class="DateOfBirth">-</span>
+      </div>
+
+      <!-- Row: Gender | Driver ID -->
+      <div class="licenseGendor">
+        <span>Gender</span>
+        <span class="Gendor">-</span>
+      </div>
+      <div class="licenseDriverID">
+        <span>Driver ID</span>
+        <span class="DriverID">-</span>
+      </div>
+
+      <!-- Row: Issue Date | Expiration Date -->
+      <div class="licenseIssueDate">
+        <span>Issue Date</span>
+        <span class="IssueDate">-</span>
+      </div>
+      <div class="licenseExpirationDate">
+        <span>Expiration Date</span>
+        <span class="ExpirationDate">-</span>
+      </div>
+
+    </div>
+
+    <!-- Action Bar -->
+    <div class="intl-action-bar">
+      <button class="btn-close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        Close
+      </button>
+    </div>
+
+  </main>
+</div>
+<!-- Toast -->
+<div class="toast" id="toast">
+  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+    <polyline points="3 10 8 15 17 5"/>
+  </svg>
+  <span id="toastMsg">Application submitted successfully!</span>
+</div>
+</body>
+</html>

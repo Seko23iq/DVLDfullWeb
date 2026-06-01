@@ -1,0 +1,146 @@
+/* ===================================================================
+   userInfo.css  —  User Details Page
+   Depends on mainStyle.css, peopleStyle.css, personInfo.css
+=================================================================== */
+
+/* ── Section Label ────────────────────────────────────────────── */
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: var(--sp-3);
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2px;
+}
+
+.section-label svg {
+    opacity: 0.6;
+    flex-shrink: 0;
+}
+
+.title-bar h1 {
+    text-align: center;
+}
+
+/* ── User Info Card ───────────────────────────────────────────── */
+.userInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--sp-4) var(--sp-6);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: var(--sp-6);
+    max-width: 860px;
+    margin: 0 auto var(--sp-6);
+}
+
+/* ── User Info Fields ─────────────────────────────────────────── */
+.userID,
+.userName,
+.userIsActive {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--sp-3) var(--sp-4);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.userID:hover,
+.userName:hover,
+.userIsActive:hover {
+    border-color: rgba(120, 32, 167, 0.35);
+    box-shadow: 0 0 0 3px rgba(120, 32, 167, 0.06);
+}
+
+/* Labels */
+.userInfo div span:first-child {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+}
+
+/* Values */
+.userInfo div span:last-child {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--ink);
+}
+
+/* User ID — monospaced accent */
+.userID .uid {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    color: var(--accent);
+}
+
+/* Username — accent-2 color */
+.userName .uname {
+    color: var(--accent-2);
+}
+
+/* IsActive badge */
+.isActive {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+}
+
+.isActive::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.active-badge {
+    color: #1a8a4a !important;
+}
+
+.active-badge::before {
+    background: #1a8a4a;
+    box-shadow: 0 0 0 2px rgba(26, 138, 74, 0.18);
+}
+
+.inactive-badge {
+    color: #a32d2d !important;
+}
+
+.inactive-badge::before {
+    background: #a32d2d;
+    box-shadow: 0 0 0 2px rgba(163, 45, 45, 0.18);
+}
+
+/* ── Adjust personInfo bottom margin when followed by userInfo ── */
+.personInfo {
+    margin-bottom: var(--sp-4);
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 640px) {
+    .userInfo {
+        grid-template-columns: 1fr;
+        padding: var(--sp-4);
+    }
+
+    .section-label {
+        padding: 0;
+    }
+}

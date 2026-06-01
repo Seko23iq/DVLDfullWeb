@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="/css/peopleStyle.css">
+    <link rel="stylesheet" href="/css/ManageDrivers.css">
+
+    <script src="/js/manageDrivers.js" type="module"></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/layout.js" defer></script>
+    <title>Manage Drivers</title>
+
+
+</head>
+<body>
+<div class="page">
+
+    <div id="sidebar"></div>
+
+    <main>
+        <div class="title-bar">
+            <h1>Manage Drivers</h1>
+            <div class="controls">
+                <div class="filter-group">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="9" cy="9" r="6"/>
+                        <line x1="13.5" y1="13.5" x2="17" y2="17"/>
+                    </svg>
+
+                    <select class="filter-select" id="filterBy" onchange="onFilterByChange()">
+                        <option value="">— Filter By —</option>
+                        <option value="DriverID">Driver ID</option>
+                        <option value="PersonID">Person ID</option>
+                        <option value="NationalNo">National No.</option>
+                        <option value="FullName">Full Name</option>
+                    </select>
+
+                    <input type="text" id="filterInput" placeholder="Search…" style="display:none" />
+
+                    <span class="filter-label" id="errorMsg" style="color:red; display:none;"></span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Driver ID</th>
+                        <th>Person ID</th>
+                        <th>National No</th>
+                        <th>Full Name</th>
+                        <th>Created Date</th>
+                        <th>Active Licenses</th>
+                    </tr>
+                </thead>
+                <tbody id="driversTableBody">
+                    <!-- Rows injected by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ── Pagination ── -->
+        <div class="pagination-bar">
+            <span class="page-info" id="pageInfo">Page 1 of 1</span>
+            <div class="pagination-btns">
+                <button class="pg-btn" id="btnFirst" onclick="goToPage(1)"                title="First">«</button>
+                <button class="pg-btn" id="btnPrev"  onclick="goToPage(currentPage - 1)" title="Previous">‹</button>
+                <div class="pg-numbers" id="pgNumbers"></div>
+                <button class="pg-btn" id="btnNext"  onclick="goToPage(currentPage + 1)" title="Next">›</button>
+                <button class="pg-btn" id="btnLast"  onclick="goToPage(totalPages)"      title="Last">»</button>
+            </div>
+            <span class="page-total" id="totalCount"></span>
+        </div>
+    </main>
+</div>
+
+<script>
+    /* ── Filter show/hide logic ───────────────────────────────── */
+    function onFilterByChange() {
+        const val       = document.getElementById('filterBy').value;
+        const textInput = document.getElementById('filterInput');
+
+        textInput.style.display = val !== '' ? 'inline-block' : 'none';
+        textInput.value = '';
+
+        if (typeof applyFilter === 'function') applyFilter();
+    }
+</script>
+
+</body>
+</html>

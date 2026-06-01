@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="/css/peopleStyle.css">
+    <link rel="stylesheet" href="/css/listDetainedLicense.css">
+
+    <script src="/js/listDetainedLicense.js" type="module"></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/layout.js" defer></script>
+    <title>List Detained Licenses</title>
+
+
+</head>
+<body>
+<div class="page">
+
+    <div id="sidebar"></div>
+
+    <main>
+        <div class="title-bar">
+            <h1>List Detained Licenses</h1>
+            <div class="controls">
+                <div class="filter-group">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="9" cy="9" r="6"/>
+                        <line x1="13.5" y1="13.5" x2="17" y2="17"/>
+                    </svg>
+
+                    <select class="filter-select" id="filterBy" onchange="onFilterByChange()">
+                        <option value="">— Filter By —</option>
+                        <option value="DetainID">Detain ID</option>
+                        <option value="IsReleased">Is Released</option>
+                        <option value="NationalNo">National No.</option>
+                        <option value="FullName">Full Name</option>
+                        <option value="ReleaseAppID">Release Application ID</option>
+                    </select>
+
+                    <input type="text" id="filterInput" placeholder="Search…" style="display:none" />
+
+                    <select class="filter-select" id="isReleasedSelect">
+                        <option value="">All</option>
+                        <option value="true">Released</option>
+                        <option value="false">Detained</option>
+                    </select>
+
+                    <span class="filter-label" id="errorMsg" style="color:red; display:none;"></span>
+                </div>
+
+                <div style="display:flex; gap: var(--sp-3);">
+                    <button class="btn-release-nav" onclick="window.location.href='/Sections/DetainRelseLicense/Releasedetainlicense.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+                        </svg>
+                        Release
+                    </button>
+                    <button class="btn-detain-nav" onclick="window.location.href='/Sections/DetainRelseLicense/Detain.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        Detain
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>D.ID</th>
+                        <th>L.ID</th>
+                        <th>D.Date</th>
+                        <th>Is Released</th>
+                        <th>Fine Fees</th>
+                        <th>Release Date</th>
+                        <th>N.No</th>
+                        <th>Full Name</th>
+                        <th>Release App. ID</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody id="detainTableBody">
+                    <!-- Rows injected by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ── Pagination ── -->
+        <div class="pagination-bar">
+            <span class="page-info" id="pageInfo">Page 1 of 1</span>
+            <div class="pagination-btns">
+                <button class="pg-btn" id="btnFirst" title="First">«</button>
+                <button class="pg-btn" id="btnPrev"   title="Previous">‹</button>
+                <div class="pg-numbers" id="pgNumbers"></div>
+                <button class="pg-btn" id="btnNext"   title="Next">›</button>
+                <button class="pg-btn" id="btnLast"  title="Last">»</button>
+            </div>
+            <span class="page-total" id="totalCount"></span>
+        </div>
+    </main>
+</div>
+
+
+</body>
+</html>

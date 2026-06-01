@@ -1,0 +1,233 @@
+- Creaate PeopleDTO and connect it to the webpage to testing.
+People 
+ - Options column table -> Person Info button - Delete Person Button - Edit Person Button [DONE]
+ - Filter By -> Show TextBox if Filter By != NONE.
+ - Footer Table that contain pages. [DONT NEED]
+ - API with People in database. [DONE]
+
+2026/4/19
+ - Filter BY -> Make it work and filtering the data.
+ -------------------------------------------
+ AddNewPerson page [DONE] 2026/4/23
+ Edit Person Page [DONE] 2026/4/25
+ Info Person Page [DONE] 2026/4/22
+ Delete Person Function [DONE] 2026/4/20
+ Pages in table footer 1,2,3,4,5... [DONE] 2026/4/22
+ email string to <a> tag on click open outlink or gmail ..etc and send email to this person. [Feature]
+ [FIX] fixing the imagePath and upload image.
+ ---------------------------------------------------------------------
+
+
+User Entity
+ - build Login page . [DONE] 2026/4/26
+ - Make login to username & password login to js and connect it to API [DONE] 2026/4/26
+ - Storage the username at LocalStorage and then call it back to main page [DONE] 2026/4/26
+ - [Feature] Add User Image .
+ - Add LoginOut Feature [DONE] 2026/4/27
+ - Work With User Main 
+    - Add Remember me to login page and its logic. [DONE] 2026/4/27
+    - Make users page and add to it the tables and its buttons [DONE] 2026/4/27
+    - Get All Users from DataBase. [DONE] 2026/4/27
+    - Make the info User / Get it from API [DONE] Desgin the page with AI. [DONE] | [DONE] 2026/4/28
+    - Make the FilterBy User Table [Done] 2026/4/28
+    - Make the Delete User [DONE] 2026/4/28
+    - Make the Add User
+      - Desgin the page  [DONE] 2026/4/29
+      - Add info person page [DONE] 2026/4/29
+      - Add Search Section with person id -> show the person info . [DONE] 2026/4/29
+      - Make the logic serach for person and show that person info . [DONE] 2026/4/29
+      - Add User to DataBase . [DONE] 2026/4/29
+      - [Feature] When searching by personID check if there is an user active with this personID.
+      - [Feature] Add isActive Checkbox input
+
+    - Make the Edit User [DONE] 2026/4/30
+    - connect all the desgin URLs And fixing the missing file (find it using Network in DevTools) [DONE] 2026/4/30
+-------------------------------------------------------------------------------------------------------
+Manage Application Types
+  - Desgin FrontEnd. [DONE] 2026/5/1
+  - Desgin The (GetAllRecords | GetApplicationTypeInfo | UpdateApplicationType) In DataLayer and Bussines Layer And API [DONE]. 2026/5/1
+  - Sure its working. [DONE] 2026/5/1
+-------------------------------------------------------------------------------------------------------
+Manage Test Types
+  - Desgin FrontEnd. [DONE] 2026/5/1
+  - Desgin The (GetAllRecords | GetApplicationTestTypeInfo | UpdateApplicationTestType) In DataLayer and Bussines Layer And API [DONE]. 2026/5/1
+  - Sure its working. [DONE] 2026/5/1
+-------------------------------------------------------------------------------------------------------
+- Sure of new feature of application menu working in all pages. [DONE] 2025/5/2
+-------------------------------------------------------------------------------------------------------
+Manage Driving License Applications
+  - Desgin The FrontEnd  [DONE] 2026/5/2
+    - Add L.D.AppID - Driving Class - NationalNo - FullName - PassedTest - Status - Options. [DONE] 2026/5/2
+    - Button Add Local License Application [DONE] 2026/5/2
+    - Filter By Section. [DONE] 2026/5/2
+
+  - Desgin The BackEnd And API Controller. [DONE] 2026/5/2
+    - Filter Logic.  [DONE] 2026/5/3
+  Add New Local Driving Application License. 
+    - Desgin The FrontEnd [DONE] 2026/5/3
+    - Add Cancel Local Driving Application.
+
+[Feature] Add Module for Pagination
+
+
+
+-------------------------------------------------
+
+Manage Driving License Applications PART 2
+  - Add Page that handle all the option that can user do to Local Application. [DONE] 2026/5/5
+  - Add btn-process to the page [DONE] 2026/5/5
+  - Vision Test Appoinment Page [DONE] 2026/5/5
+
+
+Take Test Section
+  - Desgin the front end . [DONE] 2026/5/7
+  - Make sql query OF geting the info that displayed in frontend.[DONE] 2026/5/7
+  - Add it to DataLayer & bussines Layer & API.[DONE] 2026/5/7
+  - Add it to the front end.[DONE] 2026/5/7
+  
+  - Make sql query of sending post result of take test. [DONE] 2026/5/7
+  - Add it to DataLayer & bussines Layer & API, [DONE] 2026/5/7
+
+
+Edit Test
+  - Desgin the front end . [DONE] 2026/5/8
+  - Make sql query OF geting the info that displayed in frontend.[DONE] 2026/5/8
+  - Add it to DataLayer & bussines Layer & API.[DONE] 2026/5/8
+  - Add it to the front end.[DONE] 2026/5/8
+
+  - Make sql query of sending post result of Edit test. [DONE] 2026/5/8
+  - Add it to DataLayer & bussines Layer & API.[DONE] 2026/5/8
+
+
+[IMPORVE] Add all submenu in the orginal desgin and changing it in all system. [DONE] 2026/5/8
+[IMPORVE] Create css and js folder and put all css and js files in it. [DONE] 2026/5/8
+[IMPORVE] Reduce of unusing folders in People, Users, Tests, and Applications sections. [DONE] 2026/5/8
+
+
+  - Check if test application has an active test. [DONE] [DONE] 2026/5/9
+  - Check if Applicant is already have passed test of this test type.
+  - Take all tests sections -> vesion - writing - Street. [DONE] 2026/5/10
+  - Issue for the first time FrontEnd And BackEnd. [DONE] 2026/5/10
+
+[IMPORVE] The Tests Folder Reduce the code and make all tests in one folder and file. [DONE] 2026/5/10
+
+[IMPORVE] Can not edit test after take it. [DONE] 2026/5/10
+
+
+  - Show License Info Page FrontEnd And BackEnd. [DONE] 2026/5/11
+  - Cancel and Delete Application Login. cancel [DONE] 2026/5/11
+
+
+[IMPORVE] Seperate DTO to new Layer > Make DTO Layer . [DONE] 2026/5/12
+[IMPORVE] Make Compontents folder and careate aside and using it in project. [DONE] 2026/5/12
+
+
+
+-------------------------------------------------
+
+International License Application
+  - Desgin the New International License application page FrontEnd . [DONE] 2026/2/13
+  - BackEnd logic for new International License Applicant. [DONE] 2026/2/13
+  - International License Managment FrontEnd and BackEnd. [DONE] 2026/2/13
+  - Show International License application info page frontend and BackEnd. [DONE] 2026/2/13
+
+
+  - New International License application validation chack if License is active and not deatained if not make error msg. [DONE] 2026/2/13
+  - New International License application validation chack if The License has already an active International License. [DONE] 2026/2/13
+  - In International Managment Fix Show Person Info & Show License History.
+
+  
+-------------------------------------------------
+
+Applications: Renew Local Driving License
+  - Desgin the FrontEnd Page . [DONE] 2026/5/14
+  - BackEnd -> Is License Expire. [DONE] 2026/5/14
+  - Renew Local Driving License.
+
+[FIX] Fix the Person, User, TestType, ApplicationTypes, Countries, Bussines Layer And DataLayer. 
+
+
+-------------------------------------------------
+
+Applications: Replacement for Damaged or Lost Licenses . [DONE] 2026/5/16
+[Fix] ImagePath in addperson and show image person. [DONE] 2026/5/16
+[Fix] Make Nationality by combobox and make user check get it from server. [DONE] 2026/5/16
+
+
+-------------------------------------------------
+Detain & Release Licenses
+  - Desgin Detain FrontEnd Desgin. [DONE] 2026/5/17
+  - Show License Info.  [DONE] 2026/5/17
+  - Detain License Logic in BackEnd -> (Desgin the query -> DataLayer function -> DTO Object -> BussinesLayer -> API EndPoint). [DONE]  2026/5/17
+
+  - Sure if license is already detain.
+
+  - Desgin Release FrontEnd Desgin. [DONE] 2026/5/17
+  - Release License Logic in BackEnd -> (Desgin the query -> DataLayer function -> DTO Object -> BussinesLayer -> API EndPoint). [DONE]  2026/5/17
+
+
+
+  - Desgin Detain & Release Licenses Managment 
+  - Desgin FrontEnd . [DONE] 2026/5/17
+  - Desgin BackEnd . [DONE] 2026/5/17
+
+  - Show personinfo by NationalNo. [DONE] 2026/5/17
+
+
+DONE ALL THE PROJECT BUT THERE IS BUGS AND VALIDATION HAVE TO FIXING IT.
+Alhamdulillah.
+-------------------------------------------------
+
+Account Settings 
+  - Current User Info Page
+    - Desgin the FrontEnd [Done]
+    - save the userid in LocalStorage using username when user is login. 
+    - using the userid in LocalStorage to get the personid of that user and than show personinfo of user.
+    - make dto with userid-Username-isActive
+    - using the userid in LocalStorage get that info of dto and show it in the page.
+
+    NO NEED ALL THAT I ALREADY HAVE USERDTO AND USERINFO Desgin PAGE COMPARE TOGHATER AND GET THE USERID FROM LocalStorage AND THAT IS IT. [Done] 2026/5/18
+
+  - Change Password Page
+    - Desgin the FrontEnd [Done] 2026/5/18
+    - Desgin the BackEnd [Done] 2026/5/18
+
+-------------------------------------------------
+Driver
+
+  - Desgin The FrontEnd. [Done] 2026/5/18
+  - Make DTO With. [Done] 2026/5/18
+  - Make DataBase GetAllDrivers. [Done] 2026/5/18
+  - Make BussinesLayer. [Done] 2026/5/18
+  - Make API EndPoint. [Done] 2026/5/18
+  - Render records to the FrontEnd. [Done] 2026/5/18
+-------------------------------------------------
+
+People, users, Account Settings, Drivers, Manage Test Types, Manage Application Types [BUGS] [DONE] 2026/5/19 All This section is clear now.
+
+-------------------------------------------------
+BUGS AND IMPORVMENT
+
+- Add Documentery to API Layer to all Controllers . [DONE] 2026/5/20
+
+- Get application type info and fron it get the fees. [DONE] 2026/5/20
+- Check if the person has already an active local appliction with this license Class. [DONE] 2026/5/20
+- Desgin the Local Driving Application Info Page. [DONE] 2026/5/20
+
+- process page. [DONE] 2026/5/20
+- Show Application Details. [DONE] 2026/5/20
+- Get License ID From Appliaction ID. [DONE] 2026/5/20
+
+- International License Page and its bugs and validations. [DONE] 2026/5/23
+- fixing some bugs and validations in Renew License Application page . [DONE] 2026/5/23
+- fixing some bugs and validations in Replacement & Lost License Application page . [DONE] 2026/5/24
+- fixing some bugs and validations in Manage deatained license and History license pages . [DONE] 2026/5/25
+-------------------------------------------------
+
+- Add IsActive to LocalStorage and if user is not active prevent him from delete person or add user ...etc. [DONE] 2026/5/26
+- Fixing the Pagination function . [DONE] 2026/5/26
+- After complete this project make DVLDfullWebProject Folder -> FrontEnd BackEnd Folders And DataBase don't forget to delete CV.html [DONE] 2026/5/27
+
+-------------------------------------------------
+
+- Doning The Last Test to the system. [DONE] 2026/5/29

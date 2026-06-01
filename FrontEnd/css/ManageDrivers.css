@@ -1,0 +1,46 @@
+/* ── Active Licenses badge ──────────────────────────────── */
+.badge-licenses {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 26px;
+    height: 22px;
+    padding: 0 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #ede9fe;
+    color: #5b21b6;
+    border: 1px solid #c4b5fd;
+}
+.badge-licenses.zero {
+    background: #f3f4f6;
+    color: #9ca3af;
+    border-color: #e5e7eb;
+}
+/* ── Created Date cell ──────────────────────────────────── */
+.date-cell {
+    font-size: 13px;
+    color: var(--muted);
+    white-space: nowrap;
+}
+/* ── Close button ───────────────────────────────────────── */
+.btn-close-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    height: 40px;
+    padding: 0 18px;
+    border-radius: var(--radius-md);
+    background: #f9fafb;
+    color: #374151;
+    border: 1.5px solid var(--line);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+}
+.btn-close-nav:hover { background: #f3f4f6; border-color: #9ca3af; }
+.btn-close-nav svg   { width: 15px; height: 15px; flex-shrink: 0; }
