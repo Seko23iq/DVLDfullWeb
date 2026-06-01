@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
 
 # 🚗 DVLD — Driving & Vehicle License Department System
 
@@ -15,11 +15,12 @@
 
 | Layer | Technology |
 |-------|-----------|
-| **Frontend** | HTML · CSS · JavaScript |
-| **Business Layer** | C# |
+| **Frontend** | HTML · CSS · JavaScript - AI |
 | **API Layer** | RESTful API + Swagger |
-| **Data Layer** | SQL Server |
 | **DTO** | Data Transfer Objects (separate layer) |
+| **Business Layer** | C# |
+| **Data Layer** | ADO.NET |
+| **DataBase** | SQL Server |
 
 ---
 
@@ -69,25 +70,25 @@
 
 ## 🗂️ Project Structure
 
-```
+````
 DVLDfullWebProject/
-├── FrontEnd/
-│   ├── css/
-│   ├── js/
-│   ├── components/        # Reusable aside/nav components
-│   ├── People/
-│   ├── Users/
-│   ├── Applications/
-│   ├── Tests/
-│   ├── Drivers/
-│   └── AccountSettings/
-├── BackEnd/
-│   ├── DataLayer/
-│   ├── BusinessLayer/
-│   ├── DTOLayer/
-│   └── APILayer/
-└── DataBase/
-```
+│
+├── 📁 FrontEnd/
+│   ├── 📁 Images/
+│   ├── 📁 Sections/
+│   ├── 📁 components/
+│   ├── 📁 css/
+│   ├── 📁 js/
+│   └── 📄 main.html
+│
+├── 📁 BackEnd/
+│   ├── 📁 DataLayer/
+│   ├── 📁 BusinessLayer/
+│   ├── 📁 DTOLayer/
+│   └── 📁 APILayer/
+│
+└── 🗄️ DataBase/
+````
 
 ---
 
@@ -101,10 +102,10 @@ DVLDfullWebProject/
 ### Setup
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/DVLD.git
+   git clone https://github.com/Seko23iq/DVLDfullWeb.git
    ```
 
-2. **Database** — Run the SQL scripts in `/DataBase` to create and seed the database.
+2. **Database** — Restore the database backup file located in `/DataBase`.
 
 3. **Backend** — Open the solution in Visual Studio, update the connection string, and run the API.
 
@@ -112,11 +113,6 @@ DVLDfullWebProject/
 
 ---
 
-## 📸 Screenshots
-
-> *(Add your screenshots here)*
-
----
 
 ## 🙏 Acknowledgment
 
